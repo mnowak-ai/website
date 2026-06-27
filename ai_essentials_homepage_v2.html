@@ -89,19 +89,30 @@
   /* HERO */
   .hero {
     background: var(--white);
-    padding: 80px 40px 0;
+    padding: 72px 40px 0;
     overflow: hidden;
-    position: relative;
     border-bottom: 1px solid var(--border);
   }
 
-  .hero-inner {
+  .hero-top {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .hero-bottom {
     max-width: 1160px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: end;
+  }
+
+  .hero-bottom-left {
+    padding-bottom: 48px;
   }
 
   .hero-eyebrow {
@@ -113,7 +124,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--purple);
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
 
   .hero-eyebrow span {
@@ -125,12 +136,12 @@
 
   .hero h1 {
     font-family: 'Fraunces', serif;
-    font-size: clamp(38px, 5vw, 60px);
+    font-size: clamp(42px, 5.5vw, 72px);
     font-weight: 300;
-    line-height: 1.08;
+    line-height: 1.05;
     color: var(--text-dark);
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    max-width: 900px;
   }
 
   .hero h1 em {
@@ -142,7 +153,7 @@
     font-size: 18px;
     color: var(--text-mid);
     line-height: 1.7;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
     max-width: 480px;
   }
 
@@ -150,7 +161,7 @@
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
-    margin-bottom: 64px;
+    margin-top: 32px;
   }
 
   .btn-primary {
@@ -885,13 +896,14 @@
 
   /* RESPONSIVE */
   @media (max-width: 960px) {
-    .hero-inner,
+    .hero-bottom,
     .continuum-header,
     .daylife-header,
     .impact-header { grid-template-columns: 1fr; gap: 32px; }
     .reach-top-inner,
     .reach-body { grid-template-columns: 1fr; gap: 28px; }
     .hero-image-col { display: none; }
+    .hero-bottom-left { padding-bottom: 40px; }
     .continuum-track { flex-wrap: wrap; justify-content: center; }
     .continuum-track::before { display: none; }
     .flow-arrow { display: none; }
@@ -902,7 +914,7 @@
     .reach-top-bar { padding: 48px 24px 32px; }
     .reach-body { padding: 32px 24px 48px; }
     .section { padding: 64px 24px; }
-    .hero { padding: 60px 24px 0; }
+    .hero { padding: 48px 24px 0; }
     .continuum-section { padding: 64px 24px; }
     .cta-section { padding: 64px 24px; }
   }
@@ -942,13 +954,15 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <span></span>
-        National AI Readiness Institution
-      </div>
-      <h1>The only AI training built around <em>how your workforce actually works</em></h1>
+  <div class="hero-top">
+    <div class="hero-eyebrow">
+      <span></span>
+      National AI Readiness Institution
+    </div>
+    <h1>The only AI training built around <em>how our workforce actually works</em></h1>
+  </div>
+  <div class="hero-bottom">
+    <div class="hero-bottom-left">
       <p class="hero-sub">We don't just teach people what AI is. We put them inside the job.</p>
       <div class="scenario-lines">
         <div class="scenario-line"><span class="sl-icon">🏥</span><span class="sl-text">"A charge nurse cuts her documentation time from 40 minutes to 8."</span></div>
@@ -958,13 +972,11 @@
         <div class="scenario-line"><span class="sl-icon">💻</span><span class="sl-text">"An IT tech closes a ticket in 90 seconds with AI-drafted diagnostics."</span></div>
         <div class="scenario-line"><span class="sl-icon">⚖️</span><span class="sl-text">"An attorney reviews 200 pages of discovery in 4 minutes."</span></div>
       </div>
-
       <div class="hero-ctas">
         <a href="#" class="btn-primary">Find your track</a>
         <a href="#" class="btn-secondary">Talk to our team</a>
       </div>
     </div>
-
     <div class="hero-image-col">
       <div class="hero-img-wrap">
         <img
@@ -978,10 +990,6 @@
       </div>
     </div>
   </div>
-</section>
-
-
-<!-- THE AI SKILLS CONTINUUM -->
 </section>
 
 
