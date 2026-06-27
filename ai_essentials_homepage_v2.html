@@ -907,13 +907,34 @@
     .cta-section { padding: 64px 24px; }
   }
 
-  @media (max-width: 600px) {
-    .tracks-grid,
-    .serve-grid,
-    .impact-outcomes { grid-template-columns: 1fr; }
-    .hero-ctas { flex-direction: column; }
-    .hero-ctas a { text-align: center; }
-    .cta-buttons { flex-direction: column; align-items: center; }
+  /* SCENARIO LINES */
+  .scenario-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .scenario-line {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .sl-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+  }
+
+  .sl-text {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.5;
   }
 </style>
 </head>
@@ -928,10 +949,19 @@
         National AI Readiness Institution
       </div>
       <h1>The only AI training built around <em>how your workforce actually works</em></h1>
-      <p class="hero-sub">We don't teach people what AI is. We train a hospital billing coordinator on the exact tools she'll use Monday morning, and a manufacturing supervisor how to read AI-generated quality alerts on the floor. Scenario-based. Role-specific. Ready to deploy statewide.</p>
+      <p class="hero-sub">We don't just teach people what AI is. We put them inside the job.</p>
+      <div class="scenario-lines">
+        <div class="scenario-line"><span class="sl-icon">🏥</span><span class="sl-text">"A charge nurse cuts her documentation time from 40 minutes to 8."</span></div>
+        <div class="scenario-line"><span class="sl-icon">🎓</span><span class="sl-text">"A teacher gets AI-drafted feedback for 30 students before lunch."</span></div>
+        <div class="scenario-line"><span class="sl-icon">⚙️</span><span class="sl-text">"A supervisor reroutes a production line before Friday's shift. No downtime."</span></div>
+        <div class="scenario-line"><span class="sl-icon">📊</span><span class="sl-text">"A business analyst finishes the quarterly report by 10am."</span></div>
+        <div class="scenario-line"><span class="sl-icon">💻</span><span class="sl-text">"An IT tech closes a ticket in 90 seconds with AI-drafted diagnostics."</span></div>
+        <div class="scenario-line"><span class="sl-icon">⚖️</span><span class="sl-text">"An attorney reviews 200 pages of discovery in 4 minutes."</span></div>
+      </div>
+
       <div class="hero-ctas">
-        <a href="#" class="btn-primary">Deploy statewide</a>
-        <a href="#" class="btn-secondary">See training tracks</a>
+        <a href="#" class="btn-primary">Find your track</a>
+        <a href="#" class="btn-secondary">Talk to our team</a>
       </div>
     </div>
 
@@ -948,6 +978,10 @@
       </div>
     </div>
   </div>
+</section>
+
+
+<!-- THE AI SKILLS CONTINUUM -->
 </section>
 
 
@@ -1413,8 +1447,8 @@
     <h2 class="section-headline">Let's build your state's AI-enabled workforce</h2>
     <p class="cta-sub">Whether you're launching a pilot cohort or planning a statewide rollout, AI Essentials has the infrastructure, the sector-specific content, and the assessment documentation your institutions need.</p>
     <div class="cta-buttons">
-      <a href="#" class="btn-white">Talk to our team</a>
-      <a href="#" class="btn-outline-white">View training tracks</a>
+      <a href="#" class="btn-white">Find your track</a>
+      <a href="#" class="btn-outline-white">Talk to our team</a>
     </div>
   </div>
 </section>
@@ -1657,13 +1691,11 @@
 }
 </style>
 
-<style>
-/* RESPONSIVE REACH */
-</style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <script>
+document.addEventListener('DOMContentLoaded', function() {
 (function() {
   const activeStates = new Set([
     "Wyoming","Texas","California","Florida","New York","Illinois","Ohio",
@@ -1763,6 +1795,7 @@
         .text("Active in 31 states across the US");
     });
 })();
+});
 </script>
 </body>
 </html>
