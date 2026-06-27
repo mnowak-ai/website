@@ -635,12 +635,33 @@
     background: var(--off-white);
   }
 
-  .reach-header {
+  .reach-top-bar {
+    padding: 64px 40px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .reach-top-inner {
+    max-width: 1160px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 60px;
     align-items: center;
-    margin-bottom: 48px;
+  }
+
+  .reach-headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--text-dark);
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .reach-headline em {
+    font-style: italic;
+    color: var(--purple);
   }
 
   .reach-stats-row {
@@ -683,8 +704,11 @@
   .reach-body {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 40px;
     align-items: start;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 40px 40px 64px;
+    gap: 48px;
   }
 
   .reach-map-col {
@@ -692,7 +716,6 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 20px 20px 12px;
-    max-width: 100%;
   }
 
   .reach-map-col svg {
@@ -713,7 +736,16 @@
   .reach-right-col {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
+    padding-top: 8px;
+  }
+
+  .reach-blurb {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
   }
 
   .tracks-grid-label {
@@ -760,12 +792,26 @@
     line-height: 1.2;
   }
 
-  .hex-note {
-    font-size: 13px;
-    color: var(--text-muted);
+  .reach-callout {
+    background: var(--purple);
+    border-radius: var(--radius-md);
+    padding: 20px 22px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .reach-callout-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .reach-callout p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.88);
     line-height: 1.65;
-    border-top: 1px solid var(--border);
-    padding-top: 16px;
+    margin: 0;
   }
 
   /* CTA SECTION */
@@ -842,9 +888,9 @@
     .hero-inner,
     .continuum-header,
     .daylife-header,
-    .impact-header,
-    .reach-header,
-    .reach-body { grid-template-columns: 1fr; gap: 32px; }
+    .impact-header { grid-template-columns: 1fr; gap: 32px; }
+    .reach-top-inner,
+    .reach-body { grid-template-columns: 1fr; gap: 28px; }
     .hero-image-col { display: none; }
     .continuum-track { flex-wrap: wrap; justify-content: center; }
     .continuum-track::before { display: none; }
@@ -853,7 +899,8 @@
     .serve-grid { grid-template-columns: repeat(2, 1fr); }
     .impact-steps { grid-template-columns: 1fr; }
     .impact-steps::before { display: none; }
-    .reach-stats-row { width: 100%; }
+    .reach-top-bar { padding: 48px 24px 32px; }
+    .reach-body { padding: 32px 24px 48px; }
     .section { padding: 64px 24px; }
     .hero { padding: 60px 24px 0; }
     .continuum-section { padding: 64px 24px; }
@@ -1281,14 +1328,12 @@
 
 
 <!-- OUR REACH -->
-<section class="section proof-section">
-  <div class="section-inner">
-
-    <div class="reach-header">
-      <div>
-        <div class="section-eyebrow">Our reach</div>
-        <h2 class="section-headline">Already operating at <em>national scale</em>, including rural</h2>
-        <p class="section-sub">From urban community college systems to single-school rural districts, our model is built for the organizations other training vendors overlook.</p>
+<section class="proof-section">
+  <div class="reach-top-bar">
+    <div class="reach-top-inner">
+      <div class="reach-top-left">
+        <div class="section-eyebrow" style="margin-bottom:10px;">Our reach</div>
+        <h2 class="reach-headline">Already operating at <em>national scale</em>, including rural</h2>
       </div>
       <div class="reach-stats-row">
         <div class="reach-stat">
@@ -1307,46 +1352,56 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="reach-body">
+  <div class="reach-body">
 
-      <div class="reach-map-col">
-        <svg id="us-map" viewBox="0 0 960 580" style="width:100%;height:auto;display:block;border-radius:12px;"></svg>
-        <p class="map-caption">Hover any state to see its status</p>
+    <div class="reach-map-col">
+      <svg id="us-map" viewBox="0 0 960 580" style="width:100%;height:auto;display:block;"></svg>
+      <p class="map-caption">Hover any state to see its status</p>
+    </div>
+
+    <div class="reach-right-col">
+
+      <div class="reach-blurb">
+        <p>From urban community college systems to single-school rural districts, we deploy through the institutions already in your communities, not new ones built from scratch.</p>
       </div>
 
-      <div class="reach-right-col">
-        <div class="tracks-grid-label">6 Industry Tracks</div>
-        <div class="hex-grid">
-          <div class="hex-card">
-            <div class="hex-icon">🎓</div>
-            <div class="hex-name">Education</div>
-          </div>
-          <div class="hex-card">
-            <div class="hex-icon">🏥</div>
-            <div class="hex-name">Healthcare</div>
-          </div>
-          <div class="hex-card">
-            <div class="hex-icon">📊</div>
-            <div class="hex-name">Business</div>
-          </div>
-          <div class="hex-card">
-            <div class="hex-icon">⚙️</div>
-            <div class="hex-name">Manufacturing</div>
-          </div>
-          <div class="hex-card">
-            <div class="hex-icon">💻</div>
-            <div class="hex-name">Technology</div>
-          </div>
-          <div class="hex-card">
-            <div class="hex-icon">⚖️</div>
-            <div class="hex-name">Law</div>
-          </div>
+      <div class="tracks-grid-label">6 Industry Tracks</div>
+      <div class="hex-grid">
+        <div class="hex-card">
+          <div class="hex-icon">🎓</div>
+          <div class="hex-name">Education</div>
         </div>
-        <p class="hex-note">Every track is built around real workflows and the actual AI tools workers use on the job, not generic AI literacy content.</p>
+        <div class="hex-card">
+          <div class="hex-icon">🏥</div>
+          <div class="hex-name">Healthcare</div>
+        </div>
+        <div class="hex-card">
+          <div class="hex-icon">📊</div>
+          <div class="hex-name">Business</div>
+        </div>
+        <div class="hex-card">
+          <div class="hex-icon">⚙️</div>
+          <div class="hex-name">Manufacturing</div>
+        </div>
+        <div class="hex-card">
+          <div class="hex-icon">💻</div>
+          <div class="hex-name">Technology</div>
+        </div>
+        <div class="hex-card">
+          <div class="hex-icon">⚖️</div>
+          <div class="hex-name">Law</div>
+        </div>
+      </div>
+
+      <div class="reach-callout">
+        <div class="reach-callout-icon">📍</div>
+        <p>Every track is built around real workflows and the actual AI tools workers use on the job. Not generic AI literacy content.</p>
       </div>
 
     </div>
+
   </div>
 </section>
 
