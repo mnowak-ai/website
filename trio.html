@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Essentials: TRIO Programs</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple: #7B2FBE;
+  --purple-light: #9B50D8;
+  --purple-xlight: #F3E8FF;
+  --purple-dark: #5A1F8A;
+  --white: #ffffff;
+  --off-white: #FAFAF8;
+  --text-dark: #1A1220;
+  --text-mid: #4A3F5C;
+  --text-muted: #7A6E8A;
+  --border: #E8E2F0;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO */
+.hero {
+  background: var(--off-white);
+  padding: 80px 40px 0;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 20px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--purple);
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 300;
+  line-height: 1.08;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--purple);
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.hero-programs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.hero-program-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--purple-dark);
+  background: var(--purple-xlight);
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(123,47,190,0.15);
+}
+
+.hero-img-col {
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-img-wrap {
+  width: 100%;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.88) saturate(0.85);
+}
+
+.hero-img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(26,18,32,0.85), transparent);
+  padding: 40px 28px 24px;
+}
+
+.hero-img-caption p {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  color: white;
+  line-height: 1.5;
+}
+
+/* TRUTH SECTION */
+.truth-section {
+  background: var(--purple);
+  padding: 64px 40px;
+}
+
+.truth-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.truth-headline {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  grid-column: 1;
+}
+
+.truth-headline em {
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+}
+
+.truth-stat-source {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 10px;
+  font-style: italic;
+  line-height: 1.4;
+}
+.truth-stat {
+  padding: 28px;
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.truth-stat-n {
+  font-family: 'Fraunces', serif;
+  font-size: 52px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.truth-stat-l {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+}
+
+/* MISSION MATCH */
+.mission-section {
+  padding: 96px 40px;
+  background: var(--white);
+}
+
+.mission-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--purple);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--purple);
+}
+
+.section-body {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+.section-body p + p {
+  margin-top: 16px;
+}
+
+.mission-img {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.mission-img img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.88) saturate(0.85);
+}
+
+.mission-pull {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  right: 28px;
+  background: rgba(26,18,32,0.88);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+
+.mission-pull p {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  color: white;
+  line-height: 1.55;
+}
+
+/* PROGRAMS SECTION */
+.programs-section {
+  background: var(--off-white);
+  padding: 96px 40px;
+}
+
+.programs-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.programs-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 56px;
+  width: 100%;
+}
+
+.programs-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+
+
+
+.program-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 56px rgba(26,18,32,0.16);
+}
+
+.program-card-img-wrap {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  height: 200px;
+}
+
+.program-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85) saturate(0.85);
+  transition: transform 0.4s ease;
+}
+
+.program-card:hover .program-card-img {
+  transform: scale(1.05);
+}
+
+.program-card-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(to top, rgba(26,18,32,0.75), transparent);
+  pointer-events: none;
+}
+
+.program-who-overlay {
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  z-index: 1;
+}
+
+.program-card-body {
+  padding: 22px 24px 26px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.program-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.program-name {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.program-desc {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.program-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.program-outcome {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.45;
+  align-items: flex-start;
+}
+
+.program-outcome::before {
+  content: '✓';
+  color: var(--purple);
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+
+/* APR SECTION */
+.apr-section {
+  background: var(--white);
+  padding: 96px 40px;
+  border-top: 1px solid var(--border);
+}
+
+.apr-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.apr-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+
+.apr-intro .section-body {
+  margin-top: 16px;
+}
+
+.apr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--purple-xlight);
+  color: var(--purple-dark);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 100px;
+  margin-top: 20px;
+  letter-spacing: 0.04em;
+}
+
+.apr-callout {
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  border: 1px solid var(--border);
+}
+
+.apr-callout-title {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.apr-map {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.apr-map-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.apr-map-from {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.4;
+}
+
+.apr-map-arrow {
+  color: var(--purple);
+  font-size: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.apr-map-to {
+  background: var(--purple-xlight);
+  border: 1px solid rgba(123,47,190,0.15);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--purple-dark);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* DEPLOYMENT SECTION */
+.deploy-section {
+  background: var(--off-white);
+  padding: 96px 40px;
+}
+
+.deploy-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.deploy-header {
+  margin-bottom: 56px;
+  max-width: 640px;
+}
+
+.deploy-scenario {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.deploy-scenario-body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.deploy-step {
+  padding: 32px 24px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+
+.deploy-step:last-child {
+  border-right: none;
+}
+
+.deploy-step-num {
+  font-family: 'Fraunces', serif;
+  font-size: 40px;
+  font-weight: 300;
+  color: #9B50D8;
+  line-height: 1;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.deploy-step-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.deploy-step-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.deploy-result {
+  background: var(--purple);
+  padding: 32px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.deploy-result-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+
+.deploy-result-value {
+  font-size: 15px;
+  color: white;
+  line-height: 1.55;
+}
+
+/* CTA SECTION */
+.cta-section {
+  background: var(--white);
+  padding: 96px 40px;
+  border-top: 1px solid var(--border);
+}
+
+.cta-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.cta-left .section-title {
+  margin-bottom: 16px;
+}
+
+.cta-left .section-body {
+  margin-bottom: 32px;
+}
+
+.cta-left-programs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cta-program-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-mid);
+}
+
+.cta-program-row::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple);
+  flex-shrink: 0;
+}
+
+/* FORM */
+.inquiry-form {
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 40px;
+}
+
+.form-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text-dark);
+  background: var(--white);
+  transition: border-color 0.15s;
+  appearance: none;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(123,47,190,0.08);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 15px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.form-submit:hover {
+  background: var(--purple-dark);
+}
+
+.form-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero-inner,
+  .mission-inner,
+  .apr-header,
+  .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-img-col { display: none; }
+  .truth-inner { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .truth-headline { grid-column: 1; }
+  .programs-header { grid-template-columns: 1fr; gap: 24px; }
+  .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  .deploy-scenario-body { grid-template-columns: repeat(2, 1fr); }
+  .deploy-result { grid-template-columns: 1fr; gap: 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero { padding: 60px 24px 0; }
+  .truth-section,
+  .mission-section,
+  .programs-section,
+  .apr-section,
+  .deploy-section,
+  .cta-section { padding: 64px 24px; }
+}
+
+@media (max-width: 600px) {
+  .programs-grid { grid-template-columns: 1fr; }
+  .deploy-scenario-body { grid-template-columns: 1fr; }
+  .deploy-step { border-right: none; border-bottom: 1px solid var(--border); }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Who we serve</div>
+      <h1>Your students are the ones AI will hit hardest if they're <em>not ready</em></h1>
+      <p class="hero-sub">They're also the ones most underserved by every AI training product on the market. AI Essentials was built for exactly the population TRIO exists to serve.</p>
+      <div class="hero-programs">
+        <span class="hero-program-tag">Upward Bound</span>
+        <span class="hero-program-tag">Student Support Services</span>
+        <span class="hero-program-tag">Educational Opportunity Centers</span>
+        <span class="hero-program-tag">Talent Search</span>
+        <span class="hero-program-tag">Upward Bound Math-Science</span>
+        <span class="hero-program-tag">Veterans Upward Bound</span>
+        <span class="hero-program-tag">Ronald E. McNair Post-Baccalaureate</span>
+      </div>
+    </div>
+    <div class="hero-img-col">
+      <div class="hero-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80"
+          alt="First-generation college students working together"
+        />
+        <div class="hero-img-caption">
+          <p>"First-generation students deserve to enter the workforce with the same AI fluency as anyone else. Right now most of them don't have it."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUTH STATS -->
+<div class="truth-section">
+  <div class="truth-inner">
+    <h2 class="truth-headline">The gap is real. <em>And it's widening.</em></h2>
+    <div class="truth-stat">
+      <div class="truth-stat-n">48%</div>
+      <div class="truth-stat-l">of 2025 graduates felt unprepared to apply for entry-level positions, with 56% citing job-specific skills as their biggest gap.</div>
+      <div class="truth-stat-source">Cengage Group 2025 Graduate Employability Report</div>
+    </div>
+    <div class="truth-stat">
+      <div class="truth-stat-n">39%</div>
+      <div class="truth-stat-l">of core workforce skills will change by 2030, with AI and big data topping the list of fastest-growing skills employers need now.</div>
+      <div class="truth-stat-source">World Economic Forum, Future of Jobs Report 2025</div>
+    </div>
+    <div class="truth-stat">
+      <div class="truth-stat-n">7x</div>
+      <div class="truth-stat-l">growth in demand for AI fluency in just two years, from 1 million to 7 million workers in occupations where AI skills are now explicitly required.</div>
+      <div class="truth-stat-source">PwC 2025 Global AI Jobs Barometer</div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION MATCH -->
+<section class="mission-section">
+  <div class="mission-inner">
+    <div>
+      <div class="section-eyebrow">Why this matters</div>
+      <h2 class="section-title">This isn't a vendor relationship. It's a <em>mission match.</em></h2>
+      <div class="section-body">
+        <p>TRIO exists because access to higher education and economic opportunity should not be determined by where you were born or what your parents did for work. That belief is built into every federal dollar behind these programs.</p>
+        <p>AI Essentials exists for the same reason. We build sector-specific AI training for the populations that workforce training has historically left behind: first-generation students, adult learners returning to the workforce, low-income communities, and rural populations who never had access to the kind of career development that urban institutions take for granted.</p>
+        <p>When a TRIO program partners with AI Essentials, both organizations are doing the same work from different angles. One building the path, the other putting the tools in the hands of the people walking it.</p>
+      </div>
+    </div>
+    <div class="mission-img">
+      <img
+        src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80"
+        alt="Diverse students studying together on campus"
+      />
+      <div class="mission-pull">
+        <p>"A first-generation student who graduates AI-fluent is more employable, more confident, and less likely to be displaced in the first wave of workforce AI disruption."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs-section">
+  <div class="programs-inner">
+    <div class="programs-header">
+      <div>
+        <div class="section-eyebrow">The programs</div>
+        <h2 class="section-title">Built for every TRIO program type</h2>
+      </div>
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.75;">Each TRIO program serves a different population at a different stage. AI Essentials adapts to fit your program's structure, your students' starting point, and your reporting requirements.</p>
+    </div>
+    <div class="programs-grid">
+
+      <div class="program-card">
+        <div class="program-card-img-wrap">
+          <img class="program-card-img" src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=700&q=75" alt="Upward Bound high school students" />
+          <div class="program-who-overlay">High school students</div>
+        </div>
+        <div class="program-card-body">
+          <div class="program-card-header">
+            <span class="program-icon">📚</span>
+            <div class="program-name">Upward Bound</div>
+          </div>
+          <p class="program-desc">Upward Bound students are preparing for college and the workforce simultaneously. AI Essentials gives them a credential and a skill set that sets them apart on college applications and in their first jobs.</p>
+          <div class="program-outcomes">
+            <div class="program-outcome">AI literacy certification before graduation</div>
+            <div class="program-outcome">Sector exploration across 6 industry tracks</div>
+            <div class="program-outcome">Stackable credential for college applications and resumes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-card-img-wrap">
+          <img class="program-card-img" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&q=75" alt="Talent Search middle and high school students" />
+          <div class="program-who-overlay">Middle and high school students</div>
+        </div>
+        <div class="program-card-body">
+          <div class="program-card-header">
+            <span class="program-icon">🔍</span>
+            <div class="program-name">Talent Search</div>
+          </div>
+          <p class="program-desc">Talent Search students are still forming their sense of what careers are possible for them. Introducing AI skills at this stage plants a seed of confidence and capability that compounds over time.</p>
+          <div class="program-outcomes">
+            <div class="program-outcome">Age-appropriate AI literacy foundations</div>
+            <div class="program-outcome">Career exploration through AI tools in real industry contexts</div>
+            <div class="program-outcome">Early credential that follows them into Upward Bound and SSS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-card-img-wrap">
+          <img class="program-card-img" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=700&q=75" alt="Student Support Services college students" />
+          <div class="program-who-overlay">College students</div>
+        </div>
+        <div class="program-card-body">
+          <div class="program-card-header">
+            <span class="program-icon">🎓</span>
+            <div class="program-name">Student Support Services</div>
+          </div>
+          <p class="program-desc">SSS students are in college but navigating it without the family networks others take for granted. AI fluency gives them a concrete competitive advantage in internships, part-time work, and post-graduation employment.</p>
+          <div class="program-outcomes">
+            <div class="program-outcome">AI skills tied to their declared major or career interest</div>
+            <div class="program-outcome">Pre and post assessment data for APR academic skills category</div>
+            <div class="program-outcome">Credential to strengthen internship and job applications</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-card-img-wrap">
+          <img class="program-card-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&q=75" alt="Educational Opportunity Centers adult learners" />
+          <div class="program-who-overlay">Adult learners</div>
+        </div>
+        <div class="program-card-body">
+          <div class="program-card-header">
+            <span class="program-icon">🏢</span>
+            <div class="program-name">Educational Opportunity Centers</div>
+          </div>
+          <p class="program-desc">EOC serves adults navigating a return to education while managing jobs, families, and financial pressure. AI training that is practical, fast, and directly connected to workforce outcomes meets them where they are.</p>
+          <div class="program-outcomes">
+            <div class="program-outcome">Workforce-aligned AI tracks in Healthcare, Business, Manufacturing</div>
+            <div class="program-outcome">Completion possible alongside work and family commitments</div>
+            <div class="program-outcome">Measurable skills gain for APR employment outcome documentation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-card-img-wrap">
+          <img class="program-card-img" src="https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=700&q=75" alt="Veterans Upward Bound students" />
+          <div class="program-who-overlay">Veteran students</div>
+        </div>
+        <div class="program-card-body">
+          <div class="program-card-header">
+            <span class="program-icon">🎖️</span>
+            <div class="program-name">Veterans Upward Bound</div>
+          </div>
+          <p class="program-desc">Veterans Upward Bound students bring discipline and real-world experience. What many lack is exposure to the AI tools now reshaping the industries they are entering. AI Essentials gives them sector-specific fluency that translates immediately into their career goals.</p>
+          <div class="program-outcomes">
+            <div class="program-outcome">AI training aligned to high-demand veteran employment sectors</div>
+            <div class="program-outcome">Credential that complements existing military service documentation</div>
+            <div class="program-outcome">Pre and post assessment data for APR academic skills documentation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-card">
+        <div class="program-card-img-wrap">
+          <img class="program-card-img" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&q=75" alt="McNair Scholars graduate research students" />
+          <div class="program-who-overlay">First-gen graduate school-bound students</div>
+        </div>
+        <div class="program-card-body">
+          <div class="program-card-header">
+            <span class="program-icon">🔬</span>
+            <div class="program-name">Ronald E. McNair Post-Baccalaureate</div>
+          </div>
+          <p class="program-desc">McNair Scholars are preparing for doctoral programs and research careers. AI fluency is increasingly essential in academic research, data analysis, and scholarly publishing, and McNair students deserve to enter graduate school already ahead of the curve.</p>
+          <div class="program-outcomes">
+            <div class="program-outcome">AI tools for research, data analysis, and literature review</div>
+            <div class="program-outcome">Credential that strengthens graduate school applications</div>
+            <div class="program-outcome">Skills that translate directly into dissertation and lab work</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- APR ALIGNMENT -->
+<section class="apr-section">
+  <div class="apr-inner">
+    <div class="apr-header">
+      <div class="apr-intro">
+        <div class="section-eyebrow">Reporting</div>
+        <h2 class="section-title">Your APR outcomes, <em>already documented.</em></h2>
+        <div class="section-body">
+          <p>Every AI Essentials cohort produces pre and post assessment data that maps directly to Annual Performance Report outcome categories. When your program year ends, you have the documentation ready. No extra steps, no manual data collection.</p>
+        </div>
+        <span class="apr-badge">✦ Built for APR reporting from day one</span>
+      </div>
+      <div class="apr-callout">
+        <div class="apr-callout-title">How AI Essentials data maps to your APR</div>
+        <div class="apr-map">
+          <div class="apr-map-row">
+            <div class="apr-map-from">Pre and post assessment delta scores</div>
+            <div class="apr-map-arrow">&#8594;</div>
+            <div class="apr-map-to">Academic skills gains outcome</div>
+          </div>
+          <div class="apr-map-row">
+            <div class="apr-map-from">AI credential earned</div>
+            <div class="apr-map-arrow">&#8594;</div>
+            <div class="apr-map-to">Postsecondary enrollment or credential attainment</div>
+          </div>
+          <div class="apr-map-row">
+            <div class="apr-map-from">Sector-specific track completion</div>
+            <div class="apr-map-arrow">&#8594;</div>
+            <div class="apr-map-to">Career exploration and workforce readiness</div>
+          </div>
+          <div class="apr-map-row">
+            <div class="apr-map-from">Cohort completion rate</div>
+            <div class="apr-map-arrow">&#8594;</div>
+            <div class="apr-map-to">Program participation and retention metrics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPLOYMENT SCENARIO -->
+<section class="deploy-section">
+  <div class="deploy-inner">
+    <div class="deploy-header">
+      <div class="section-eyebrow">What a deployment looks like</div>
+      <h2 class="section-title">From kickoff to <em>cohort report</em> in four weeks</h2>
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.75;margin-top:12px;">Here is what a typical Student Support Services deployment looks like from start to finish. Every program type follows a similar structure, adapted to your cohort size and schedule.</p>
+    </div>
+
+    <div class="deploy-scenario">
+      <div class="deploy-scenario-body">
+        <div class="deploy-step">
+          <div class="deploy-step-num">1</div>
+          <div class="deploy-step-title">Pre-assessment</div>
+          <div class="deploy-step-desc">All 40 students complete a sector-specific AI readiness baseline. Results give your program a clear picture of where each learner starts.</div>
+        </div>
+        <div class="deploy-step">
+          <div class="deploy-step-num">2</div>
+          <div class="deploy-step-title">Cohort training</div>
+          <div class="deploy-step-desc">Students move through 12 hours of AI Essentials coursework in their selected track. Delivered in whatever format fits your program schedule.</div>
+        </div>
+        <div class="deploy-step">
+          <div class="deploy-step-num">3</div>
+          <div class="deploy-step-title">Post-assessment</div>
+          <div class="deploy-step-desc">Every learner completes the post-assessment. Skills gain is calculated per student and aggregated for the cohort.</div>
+        </div>
+        <div class="deploy-step">
+          <div class="deploy-step-num">4</div>
+          <div class="deploy-step-title">Credential and report</div>
+          <div class="deploy-step-desc">Students receive their AI-Ready certificate. You receive a cohort impact report with pre and post data ready for APR documentation.</div>
+        </div>
+      </div>
+
+      <div class="deploy-result">
+        <div>
+          <div class="deploy-result-label">What your students receive</div>
+          <div class="deploy-result-value">A stackable AI credential, measurable skills gain, and a competitive advantage in internship and job applications</div>
+        </div>
+        <div>
+          <div class="deploy-result-label">What your program receives</div>
+          <div class="deploy-result-value">A cohort impact report with pre and post data formatted for APR outcome documentation</div>
+        </div>
+        <div>
+          <div class="deploy-result-label">What your institution receives</div>
+          <div class="deploy-result-value">A replicable AI readiness model that can scale across programs, cohorts, and academic years</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="section-eyebrow">Get started</div>
+      <h2 class="section-title">Bring AI Essentials to your <em>TRIO program</em></h2>
+      <div class="section-body">
+        <p>Tell us about your program and we will reach back out within two business days to talk through what a cohort deployment would look like for your specific student population and schedule.</p>
+      </div>
+      <div class="cta-left-programs" style="margin-top:28px;">
+        <div class="cta-program-row">Upward Bound and Upward Bound Math-Science</div>
+        <div class="cta-program-row">Student Support Services</div>
+        <div class="cta-program-row">Educational Opportunity Centers</div>
+        <div class="cta-program-row">Talent Search</div>
+        <div class="cta-program-row">Veterans Upward Bound</div>
+        <div class="cta-program-row">Ronald E. McNair Post-Baccalaureate</div>
+      </div>
+    </div>
+
+    <div class="inquiry-form">
+      <div class="form-title">Tell us about your program</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First name</label>
+          <input type="text" class="form-input" placeholder="First name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last name</label>
+          <input type="text" class="form-input" placeholder="Last name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Institution name</label>
+        <input type="text" class="form-input" placeholder="Your college or university" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-input" placeholder="you@institution.edu" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">TRIO program type</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select your program</option>
+          <option>Upward Bound</option>
+          <option>Upward Bound Math-Science</option>
+          <option>Student Support Services</option>
+          <option>Educational Opportunity Centers</option>
+          <option>Talent Search</option>
+          <option>Veterans Upward Bound</option>
+          <option>Ronald E. McNair Post-Baccalaureate</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Approximate cohort size</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select a range</option>
+          <option>Under 25 students</option>
+          <option>25 to 50 students</option>
+          <option>50 to 100 students</option>
+          <option>100 or more students</option>
+        </select>
+      </div>
+      <button class="form-submit">Send inquiry</button>
+      <p class="form-note">We respond to all inquiries within two business days.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
