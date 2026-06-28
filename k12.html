@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Essentials: K-12 Schools and Districts</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple: #7B2FBE;
+  --purple-light: #9B50D8;
+  --purple-xlight: #F3E8FF;
+  --purple-dark: #5A1F8A;
+  --white: #ffffff;
+  --off-white: #FAFAF8;
+  --text-dark: #1A1220;
+  --text-mid: #4A3F5C;
+  --text-muted: #7A6E8A;
+  --border: #E8E2F0;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80');
+  background-size: cover;
+  background-position: center 30%;
+  filter: brightness(0.45) saturate(0.7);
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,18,32,0.2) 0%,
+    rgba(26,18,32,0.1) 40%,
+    rgba(26,18,32,0.85) 75%,
+    rgba(26,18,32,0.97) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px 72px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 24px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--purple-light);
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 6vw, 76px);
+  font-weight: 300;
+  line-height: 1.04;
+  color: var(--white);
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+  max-width: 820px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: #C084FC;
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-top: 16px;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.75;
+  max-width: 480px;
+}
+
+.hero-proof {
+  display: flex;
+  gap: 32px;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.hero-proof-item {
+  text-align: center;
+}
+
+.hero-proof-n {
+  font-family: 'Fraunces', serif;
+  font-size: 44px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.hero-proof-l {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.4;
+  max-width: 100px;
+}
+
+/* URGENCY STRIP */
+.urgency-strip {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+}
+
+.urgency-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.urgency-stat {
+  padding: 48px 40px 48px 0;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+
+.urgency-stat:last-child {
+  border-right: none;
+  padding-left: 40px;
+  padding-right: 0;
+}
+
+.urgency-stat:nth-child(2) {
+  padding-left: 40px;
+}
+
+.urgency-n {
+  font-family: 'Fraunces', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--purple);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.urgency-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.urgency-source {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* SECTION SHARED */
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--purple);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--purple);
+}
+
+.section-body {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+.section-body p + p {
+  margin-top: 16px;
+}
+
+/* TWO AUDIENCES */
+.audiences-section {
+  padding: 96px 40px;
+  background: var(--white);
+}
+
+.audiences-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.audiences-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 64px;
+}
+
+.audiences-header .section-eyebrow {
+  justify-content: center;
+}
+
+.audiences-header .section-eyebrow::before {
+  display: none;
+}
+
+.audiences-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.audience-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.audience-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.5) saturate(0.7);
+  transition: transform 0.5s ease;
+}
+
+.audience-card:hover .audience-img {
+  transform: scale(1.04);
+}
+
+.audience-body {
+  position: absolute;
+  inset: 0;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(26,18,32,0.92) 0%, rgba(26,18,32,0.4) 60%, transparent 100%);
+}
+
+.audience-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #C084FC;
+  margin-bottom: 12px;
+}
+
+.audience-title {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.audience-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.audience-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.audience-outcome {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.audience-outcome::before {
+  content: '✓';
+  color: #C084FC;
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+/* CTE PATHWAY ALIGNMENT */
+.pathways-section {
+  background: var(--off-white);
+  padding: 96px 40px;
+}
+
+.pathways-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.pathways-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.pathway-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 24px;
+  transition: all 0.2s;
+}
+
+.pathway-card:hover {
+  border-color: var(--purple);
+  box-shadow: 0 8px 32px rgba(123,47,190,0.1);
+  transform: translateY(-2px);
+}
+
+.pathway-cluster {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.pathway-name {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.pathway-arrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.pathway-arrow-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.pathway-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--purple-dark);
+  background: var(--purple-xlight);
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+.perkins-note {
+  margin-top: 32px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 24px 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.perkins-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.perkins-text {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+.perkins-text strong {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* DEPLOYMENT WALKTHROUGH */
+.deploy-section {
+  background: var(--white);
+  padding: 96px 40px;
+  border-top: 1px solid var(--border);
+}
+
+.deploy-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.deploy-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.deploy-img {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.deploy-img img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.88) saturate(0.85);
+}
+
+.deploy-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.deploy-step {
+  background: var(--off-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.deploy-step-num {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: #9B50D8;
+  line-height: 1;
+  text-align: center;
+}
+
+.deploy-step-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.deploy-step-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* SCALE OPTIONS */
+.scale-section {
+  background: var(--off-white);
+  padding: 96px 40px;
+}
+
+.scale-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.scale-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px;
+}
+
+.scale-header .section-eyebrow {
+  justify-content: center;
+}
+
+.scale-header .section-eyebrow::before {
+  display: none;
+}
+
+.scale-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.scale-tier {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 36px 28px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.scale-tier:hover {
+  box-shadow: 0 12px 40px rgba(123,47,190,0.1);
+}
+
+.scale-tier.featured {
+  border-color: var(--purple);
+  background: var(--purple-xlight);
+}
+
+.scale-tier-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--purple);
+  background: white;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--purple);
+  margin-bottom: 20px;
+}
+
+.scale-tier.featured .scale-tier-badge {
+  background: var(--purple);
+  color: white;
+}
+
+.scale-tier-name {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.scale-tier-who {
+  font-size: 13px;
+  color: var(--purple);
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.scale-tier.featured .scale-tier-who {
+  border-bottom-color: rgba(123,47,190,0.2);
+}
+
+.scale-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scale-feature {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.45;
+  align-items: flex-start;
+}
+
+.scale-feature::before {
+  content: '✓';
+  color: var(--purple);
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 13px;
+}
+
+/* STUDENT VOICE */
+.voice-section {
+  background: var(--purple);
+  padding: 80px 40px;
+}
+
+.voice-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.voice-quote {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 300;
+  font-style: italic;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.voice-attribution {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.04em;
+}
+
+.voice-divider {
+  width: 40px;
+  height: 2px;
+  background: rgba(255,255,255,0.25);
+  margin: 0 auto 28px;
+}
+
+/* CTA */
+.cta-section {
+  background: var(--white);
+  padding: 96px 40px;
+  border-top: 1px solid var(--border);
+}
+
+.cta-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.cta-left .section-body {
+  margin-bottom: 32px;
+}
+
+.cta-who-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.cta-who-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-mid);
+}
+
+.cta-who-row::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple);
+  flex-shrink: 0;
+}
+
+.inquiry-form {
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 40px;
+}
+
+.form-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.form-group { margin-bottom: 18px; }
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 7px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text-dark);
+  background: var(--white);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(123,47,190,0.08);
+}
+
+.form-input::placeholder { color: var(--text-muted); }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 15px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.form-submit:hover { background: var(--purple-dark); }
+
+.form-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero { min-height: 70vh; }
+  .hero-bottom { grid-template-columns: 1fr; gap: 32px; }
+  .hero-proof { justify-content: flex-start; }
+  .urgency-inner { grid-template-columns: 1fr; }
+  .urgency-stat { border-right: none; border-bottom: 1px solid var(--border); padding: 36px 0; }
+  .urgency-stat:last-child { padding-left: 0; }
+  .urgency-stat:nth-child(2) { padding-left: 0; }
+  .audiences-grid { grid-template-columns: 1fr; }
+  .pathways-header { grid-template-columns: 1fr; gap: 28px; }
+  .pathways-grid { grid-template-columns: repeat(2, 1fr); }
+  .deploy-header { grid-template-columns: 1fr; gap: 40px; }
+  .scale-tiers { grid-template-columns: 1fr; }
+  .cta-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-content { padding: 0 24px 56px; }
+  .urgency-strip,
+  .audiences-section,
+  .pathways-section,
+  .deploy-section,
+  .scale-section,
+  .voice-section,
+  .cta-section { padding-left: 24px; padding-right: 24px; }
+}
+
+@media (max-width: 600px) {
+  .pathways-grid { grid-template-columns: 1fr; }
+  .deploy-steps { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">K-12 Schools and Districts</div>
+    <h1>Your students are using AI every day.<br><em>Most schools aren't ready for that.</em></h1>
+    <div class="hero-bottom">
+      <p class="hero-sub">AI Essentials builds the AI readiness your students need, the professional fluency your teachers deserve, and the measurable outcomes your district and state require. All in one program.</p>
+      <div class="hero-proof">
+        <div class="hero-proof-item">
+          <div class="hero-proof-n">86%</div>
+          <div class="hero-proof-l">of students used AI in school last year</div>
+        </div>
+        <div class="hero-proof-item">
+          <div class="hero-proof-n">18%</div>
+          <div class="hero-proof-l">of principals received any formal AI guidance</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY STATS -->
+<div class="urgency-strip">
+  <div class="urgency-inner">
+    <div class="urgency-stat">
+      <div class="urgency-n">86%</div>
+      <p class="urgency-body">of students and 85% of teachers used AI tools in the 2024 to 2025 school year. The tools are in the classroom. The training is not.</p>
+      <div class="urgency-source">Center for Democracy and Technology, 2025</div>
+    </div>
+    <div class="urgency-stat">
+      <div class="urgency-n">18%</div>
+      <p class="urgency-body">of principals received any guidance from their school or district on AI use during the 2023 to 2024 school year. Principals in the highest-poverty schools were half as likely to receive any support.</p>
+      <div class="urgency-source">RAND Corporation, 2025</div>
+    </div>
+    <div class="urgency-stat">
+      <div class="urgency-n">31%</div>
+      <p class="urgency-body">of U.S. school districts were providing students with any formal AI training as of late 2024. That means roughly 7 in 10 districts are sending students into an AI-shaped workforce without preparation.</p>
+      <div class="urgency-source">Coursera, February 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- TWO AUDIENCES -->
+<section class="audiences-section">
+  <div class="audiences-inner">
+    <div class="audiences-header">
+      <div class="section-eyebrow">Who this is for</div>
+      <h2 class="section-title">Two audiences. <em>One program.</em></h2>
+      <p style="font-size:17px;color:var(--text-mid);line-height:1.75;margin-top:8px;">AI readiness in a school building requires two things at once: students who understand how AI works in the real world, and teachers who are fluent enough to lead that learning with confidence.</p>
+    </div>
+
+    <div class="audiences-grid">
+      <div class="audience-card">
+        <img class="audience-img"
+          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&q=80"
+          alt="Students engaged in AI learning" />
+        <div class="audience-body">
+          <div class="audience-tag">For students</div>
+          <div class="audience-title">Career-ready AI fluency, built into the school day</div>
+          <p class="audience-desc">Every student who graduates without AI skills is less competitive in every sector of the workforce. Our sector-specific tracks connect AI directly to the careers students are already considering.</p>
+          <div class="audience-outcomes">
+            <div class="audience-outcome">Sector-specific AI training across 6 industry tracks</div>
+            <div class="audience-outcome">Stackable credential that lives on a resume and transcript</div>
+            <div class="audience-outcome">Hands-on practice with real AI tools before entering the workforce</div>
+            <div class="audience-outcome">Age-appropriate AI ethics, privacy, and responsible use</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="audience-card">
+        <img class="audience-img"
+          src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80"
+          alt="Teachers in professional development" />
+        <div class="audience-body">
+          <div class="audience-tag">For teachers</div>
+          <div class="audience-title">Professional development that actually changes how teachers work</div>
+          <p class="audience-desc">Teachers cannot teach AI fluency they don't have. AI Essentials gives educators hands-on training in the same sector-specific AI tools their students will encounter, plus the pedagogical framework to bring it into their classroom.</p>
+          <div class="audience-outcomes">
+            <div class="audience-outcome">AI tools for lesson planning, feedback, and differentiation</div>
+            <div class="audience-outcome">Education-sector AI certification</div>
+            <div class="audience-outcome">Practical strategies for AI integration without curriculum disruption</div>
+            <div class="audience-outcome">Guidance on AI policy, academic integrity, and classroom governance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTE PATHWAY ALIGNMENT -->
+<section class="pathways-section">
+  <div class="pathways-inner">
+    <div class="pathways-header">
+      <div>
+        <div class="section-eyebrow">CTE pathway alignment</div>
+        <h2 class="section-title">Every AI Essentials track maps to a CTE career cluster</h2>
+      </div>
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.75;">Students already enrolled in CTE pathways don't need a separate AI course. AI Essentials fits directly inside the career cluster they're already in, adding a credential and real-world AI tool practice without displacing existing curriculum.</p>
+    </div>
+
+    <div class="pathways-grid">
+      <div class="pathway-card">
+        <div class="pathway-cluster">CTE Career Cluster</div>
+        <div class="pathway-name">Health Science</div>
+        <div class="pathway-arrow">
+          <div class="pathway-arrow-line"></div>
+          <span style="font-size:16px;">&#8594;</span>
+          <div class="pathway-arrow-line"></div>
+        </div>
+        <div class="pathway-track">🏥 AI in Healthcare track</div>
+      </div>
+
+      <div class="pathway-card">
+        <div class="pathway-cluster">CTE Career Cluster</div>
+        <div class="pathway-name">Business Management and Administration</div>
+        <div class="pathway-arrow">
+          <div class="pathway-arrow-line"></div>
+          <span style="font-size:16px;">&#8594;</span>
+          <div class="pathway-arrow-line"></div>
+        </div>
+        <div class="pathway-track">📊 AI in Business track</div>
+      </div>
+
+      <div class="pathway-card">
+        <div class="pathway-cluster">CTE Career Cluster</div>
+        <div class="pathway-name">Manufacturing</div>
+        <div class="pathway-arrow">
+          <div class="pathway-arrow-line"></div>
+          <span style="font-size:16px;">&#8594;</span>
+          <div class="pathway-arrow-line"></div>
+        </div>
+        <div class="pathway-track">⚙️ AI in Manufacturing track</div>
+      </div>
+
+      <div class="pathway-card">
+        <div class="pathway-cluster">CTE Career Cluster</div>
+        <div class="pathway-name">Information Technology</div>
+        <div class="pathway-arrow">
+          <div class="pathway-arrow-line"></div>
+          <span style="font-size:16px;">&#8594;</span>
+          <div class="pathway-arrow-line"></div>
+        </div>
+        <div class="pathway-track">💻 AI in Technology track</div>
+      </div>
+
+      <div class="pathway-card">
+        <div class="pathway-cluster">CTE Career Cluster</div>
+        <div class="pathway-name">Education and Training</div>
+        <div class="pathway-arrow">
+          <div class="pathway-arrow-line"></div>
+          <span style="font-size:16px;">&#8594;</span>
+          <div class="pathway-arrow-line"></div>
+        </div>
+        <div class="pathway-track">🎓 AI in Education track</div>
+      </div>
+
+      <div class="pathway-card">
+        <div class="pathway-cluster">CTE Career Cluster</div>
+        <div class="pathway-name">Law, Public Safety and Security</div>
+        <div class="pathway-arrow">
+          <div class="pathway-arrow-line"></div>
+          <span style="font-size:16px;">&#8594;</span>
+          <div class="pathway-arrow-line"></div>
+        </div>
+        <div class="pathway-track">⚖️ AI in Law track</div>
+      </div>
+    </div>
+
+    <div class="perkins-note">
+      <div class="perkins-icon">📋</div>
+      <p class="perkins-text"><strong>Perkins V aligned.</strong> Every AI Essentials deployment produces pre and post assessment data, credential attainment documentation, and completion reports that map directly to Perkins V performance indicators, giving your CTE program measurable AI workforce outcomes ready for state reporting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEPLOYMENT WALKTHROUGH -->
+<section class="deploy-section">
+  <div class="deploy-inner">
+    <div class="deploy-header">
+      <div>
+        <div class="section-eyebrow">How it works</div>
+        <h2 class="section-title">From a single classroom to <em>a district-wide rollout</em></h2>
+        <div class="section-body">
+          <p>Most districts start with a pilot: one CTE pathway, one grade level, one cohort of 30 to 40 students. What they find is that the program runs cleanly inside their existing schedule, produces documentation their administrators can actually use, and generates enough student momentum that expansion becomes the natural next step.</p>
+          <p style="margin-top:16px;">We have deployed in 31 states across school districts ranging from a single rural high school to multi-campus urban systems. The model adapts. The outcome documentation is consistent.</p>
+        </div>
+      </div>
+      <div class="deploy-img">
+        <img
+          src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80"
+          alt="Students in a CTE classroom using technology"
+        />
+      </div>
+    </div>
+
+    <div class="deploy-steps">
+      <div class="deploy-step">
+        <div class="deploy-step-num">1</div>
+        <div class="deploy-step-title">Program selection</div>
+        <div class="deploy-step-desc">Your district selects which CTE pathway or grade level to pilot. We match it to the right AI Essentials track and configure the deployment for your schedule and delivery format.</div>
+      </div>
+      <div class="deploy-step">
+        <div class="deploy-step-num">2</div>
+        <div class="deploy-step-title">Pre-assessment</div>
+        <div class="deploy-step-desc">Every student and participating teacher completes a sector-specific AI readiness baseline. Establishes a clear before picture for every learner in your cohort.</div>
+      </div>
+      <div class="deploy-step">
+        <div class="deploy-step-num">3</div>
+        <div class="deploy-step-title">Learning cohort</div>
+        <div class="deploy-step-desc">12 hours of scenario-based AI training delivered in-person, hybrid, or fully online. Fits inside a semester elective, after-school program, or summer cohort without disrupting core instruction.</div>
+      </div>
+      <div class="deploy-step">
+        <div class="deploy-step-num">4</div>
+        <div class="deploy-step-title">Credential and reporting</div>
+        <div class="deploy-step-desc">Students earn their AI-Ready sector certificate. Your district receives a cohort impact report with pre and post assessment data formatted for Perkins V and state reporting requirements.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCALE OPTIONS -->
+<section class="scale-section">
+  <div class="scale-inner">
+    <div class="scale-header">
+      <div class="section-eyebrow">Deployment options</div>
+      <h2 class="section-title">Start small. <em>Scale fast.</em></h2>
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.75;margin-top:12px;">Every deployment starts with a conversation. These are the three ways schools and districts typically engage with AI Essentials.</p>
+    </div>
+
+    <div class="scale-tiers">
+      <div class="scale-tier">
+        <div class="scale-tier-badge">Classroom pilot</div>
+        <div class="scale-tier-name">Single cohort</div>
+        <div class="scale-tier-who">One teacher, one CTE pathway, one semester</div>
+        <div class="scale-features">
+          <div class="scale-feature">One AI Essentials industry track</div>
+          <div class="scale-feature">25 to 40 students</div>
+          <div class="scale-feature">Pre and post assessment for every learner</div>
+          <div class="scale-feature">Individual student credentials</div>
+          <div class="scale-feature">Cohort impact report for administrators</div>
+        </div>
+      </div>
+
+      <div class="scale-tier featured">
+        <div class="scale-tier-badge">Most common</div>
+        <div class="scale-tier-name">School-wide</div>
+        <div class="scale-tier-who">Multiple pathways, one building, one academic year</div>
+        <div class="scale-features">
+          <div class="scale-feature">Two to four AI Essentials tracks running simultaneously</div>
+          <div class="scale-feature">Teacher professional development included</div>
+          <div class="scale-feature">Dedicated implementation support</div>
+          <div class="scale-feature">School-level aggregated reporting</div>
+          <div class="scale-feature">Perkins V documentation package</div>
+        </div>
+      </div>
+
+      <div class="scale-tier">
+        <div class="scale-tier-badge">District partnership</div>
+        <div class="scale-tier-name">District-wide</div>
+        <div class="scale-tier-who">All CTE pathways, all buildings, all grade levels</div>
+        <div class="scale-features">
+          <div class="scale-feature">All six AI Essentials tracks available</div>
+          <div class="scale-feature">District-level admin dashboard and reporting</div>
+          <div class="scale-feature">Teacher certification program included</div>
+          <div class="scale-feature">State-level outcome documentation</div>
+          <div class="scale-feature">Multi-year partnership structure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT VOICE -->
+<section class="voice-section">
+  <div class="voice-inner">
+    <div class="voice-divider"></div>
+    <p class="voice-quote">"I didn't know what AI actually had to do with my career until I took this. Now I use it every day in my healthcare pathway and I have a credential that proves it. That feels different than just finishing a class."</p>
+    <div class="voice-attribution">High school junior, CTE Health Science pathway</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="section-eyebrow">Get started</div>
+      <h2 class="section-title">Bring AI Essentials to your <em>school or district</em></h2>
+      <div class="section-body">
+        <p>Tell us about your school or district and we will follow up within two business days with a deployment recommendation tailored to your CTE pathways, your student population, and your reporting requirements.</p>
+      </div>
+      <div class="cta-who-list">
+        <div class="cta-who-row">CTE Directors and Pathway Coordinators</div>
+        <div class="cta-who-row">High school principals and assistant principals</div>
+        <div class="cta-who-row">District curriculum and instruction leaders</div>
+        <div class="cta-who-row">State CTE and K-12 education officials</div>
+        <div class="cta-who-row">Teachers seeking AI professional development</div>
+      </div>
+    </div>
+
+    <div class="inquiry-form">
+      <div class="form-title">Tell us about your school or district</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First name</label>
+          <input type="text" class="form-input" placeholder="First name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last name</label>
+          <input type="text" class="form-input" placeholder="Last name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">School or district name</label>
+        <input type="text" class="form-input" placeholder="Your school or district" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-input" placeholder="you@district.edu" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Your role</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select your role</option>
+          <option>CTE Director or Coordinator</option>
+          <option>School Principal or Administrator</option>
+          <option>District Curriculum Leader</option>
+          <option>State Education Official</option>
+          <option>Classroom Teacher</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Deployment scope</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select a starting point</option>
+          <option>Single classroom or cohort pilot</option>
+          <option>School-wide deployment</option>
+          <option>District-wide partnership</option>
+          <option>State-level initiative</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <button class="form-submit">Send inquiry</button>
+      <p class="form-note">We respond to all inquiries within two business days.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
