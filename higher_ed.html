@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Essentials: Higher Education</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --purple: #7B2FBE;
+  --purple-light: #9B50D8;
+  --purple-xlight: #F3E8FF;
+  --purple-dark: #5A1F8A;
+  --white: #ffffff;
+  --off-white: #FAFAF8;
+  --text-dark: #1A1220;
+  --text-mid: #4A3F5C;
+  --text-muted: #7A6E8A;
+  --border: #E8E2F0;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=1600&q=80');
+  background-size: cover;
+  background-position: center 35%;
+  filter: brightness(0.22) saturate(0.5);
+}
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(91,31,138,0.4) 0%, rgba(26,18,32,0.3) 40%, rgba(26,18,32,0.97) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px 80px;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 24px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--purple-light);
+}
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(38px, 5.5vw, 70px);
+  font-weight: 300;
+  line-height: 1.06;
+  color: var(--white);
+  letter-spacing: -0.025em;
+  margin-bottom: 32px;
+  max-width: 860px;
+}
+.hero h1 em { font-style: italic; color: #C084FC; }
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+}
+.hero-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.78;
+}
+.hero-institution-tags {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.inst-tag {
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  background: rgba(196,132,252,0.18);
+  border: 1px solid rgba(196,132,252,0.35);
+  padding: 10px 20px;
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+}
+
+/* STATS STRIP */
+.stats-strip {
+  background: var(--text-dark);
+  padding: 0 40px;
+}
+.stats-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-left: 1px solid rgba(255,255,255,0.06);
+}
+.stat-block {
+  padding: 52px 40px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+.stat-n {
+  font-family: 'Fraunces', serif;
+  font-size: 60px;
+  font-weight: 300;
+  color: #C084FC;
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+.stat-body {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.stat-source {
+  font-size: 11px;
+  color: rgba(255,255,255,0.28);
+  font-style: italic;
+}
+
+/* SHARED */
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--purple);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+.section-title em { font-style: italic; color: var(--purple); }
+
+/* THREE AUDIENCE TABS */
+.audiences-section {
+  background: var(--off-white);
+  padding: 96px 40px;
+}
+.audiences-inner { max-width: 1160px; margin: 0 auto; }
+.audiences-header { margin-bottom: 48px; }
+.tab-nav {
+  display: flex;
+  gap: 0;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 18px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.tab-btn:last-child { border-right: none; }
+.tab-btn:hover { color: var(--purple); background: var(--purple-xlight); }
+.tab-btn.active {
+  background: var(--purple);
+  color: white;
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.tab-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+.tab-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.88) saturate(0.85);
+}
+.tab-img-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(26,18,32,0.88);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+}
+.tab-img-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C084FC;
+  margin-bottom: 4px;
+}
+.tab-img-desc { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.4; }
+.tab-content-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 12px;
+}
+.tab-content-title {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.tab-content-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.tab-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.tab-outcome {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.45;
+  align-items: flex-start;
+}
+.tab-outcome::before {
+  content: '✓';
+  color: var(--purple);
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 13px;
+}
+.coe-callout {
+  background: var(--purple-xlight);
+  border: 1px solid rgba(123,47,190,0.2);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.coe-callout-icon { font-size: 20px; flex-shrink: 0; }
+.coe-callout-text { font-size: 13px; color: var(--purple-dark); line-height: 1.6; }
+.coe-callout-text strong { color: var(--purple); font-weight: 600; }
+
+/* EMPLOYER DEMAND */
+.demand-section {
+  background: var(--white);
+  padding: 96px 40px;
+  border-top: 1px solid var(--border);
+}
+.demand-inner { max-width: 1160px; margin: 0 auto; }
+.demand-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.demand-headline-stat {
+  font-family: 'Fraunces', serif;
+  font-size: 80px;
+  font-weight: 300;
+  color: var(--purple);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.demand-headline-label {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.demand-source {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.demand-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.demand-bar-row {
+  background: var(--off-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+}
+.demand-bar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.demand-bar-role { font-size: 14px; font-weight: 500; color: var(--text-dark); }
+.demand-bar-growth {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--purple);
+}
+.demand-bar-track {
+  height: 6px;
+  border-radius: 100px;
+  background: var(--border);
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.demand-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: linear-gradient(to right, var(--purple-xlight), var(--purple));
+}
+.demand-bar-note { font-size: 12px; color: var(--text-muted); font-style: italic; }
+.demand-salary-callout {
+  margin-top: 32px;
+  background: var(--purple);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.demand-salary-n {
+  font-family: 'Fraunces', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  white-space: nowrap;
+}
+.demand-salary-text { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.demand-salary-source { font-size: 11px; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 8px; }
+
+/* CREDENTIAL ARCHITECTURE */
+.credential-section {
+  background: var(--off-white);
+  padding: 96px 40px;
+}
+.credential-inner { max-width: 1160px; margin: 0 auto; }
+.credential-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+.credential-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.cred-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.cred-existing {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+}
+.cred-existing-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.cred-existing-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+.cred-plus {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--purple);
+  text-align: center;
+  padding: 0 12px;
+}
+.cred-added {
+  background: var(--purple-xlight);
+  border: 1px solid rgba(123,47,190,0.2);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+}
+.cred-added-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 4px;
+}
+.cred-added-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--purple-dark);
+  line-height: 1.3;
+}
+
+/* FACULTY TRACK */
+.faculty-section {
+  background: var(--white);
+  padding: 96px 40px;
+  border-top: 1px solid var(--border);
+}
+.faculty-inner { max-width: 1160px; margin: 0 auto; }
+.faculty-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 56px;
+}
+.faculty-problem {
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 40px;
+}
+.faculty-problem-title {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.faculty-problem-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.faculty-pain-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pain-point {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.5;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.pain-point-icon { font-size: 18px; flex-shrink: 0; }
+.faculty-solution {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faculty-step {
+  background: var(--off-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 24px 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.faculty-step:hover {
+  border-color: var(--purple);
+  box-shadow: 0 8px 24px rgba(123,47,190,0.1);
+}
+.faculty-step-num {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--purple);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 36px;
+}
+.faculty-step-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.faculty-step-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ACCREDITATION */
+.accred-section {
+  background: var(--text-dark);
+  padding: 96px 40px;
+}
+.accred-inner { max-width: 1160px; margin: 0 auto; }
+.accred-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+.accred-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.accred-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+}
+.accred-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 300;
+  color: white;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.accred-title em { font-style: italic; color: #C084FC; }
+.accred-body {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+}
+.accred-alert {
+  background: rgba(196,132,252,0.12);
+  border: 1px solid rgba(196,132,252,0.25);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+.accred-alert-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C084FC;
+  margin-bottom: 10px;
+  display: block;
+}
+.accred-alert-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.65;
+}
+.accred-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.accred-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: background 0.2s;
+}
+.accred-card:hover { background: rgba(123,47,190,0.15); }
+.accred-card-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C084FC;
+  margin-bottom: 10px;
+}
+.accred-card-full {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.accred-card-body {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.accred-map-item {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+  margin-bottom: 8px;
+  align-items: flex-start;
+}
+.accred-map-item::before {
+  content: '→';
+  color: #C084FC;
+  flex-shrink: 0;
+}
+
+
+/* DEPLOYMENT TIMELINE */
+.timeline-section {
+  background: var(--white);
+  padding: 96px 40px;
+  border-top: 1px solid var(--border);
+}
+.timeline-inner { max-width: 1160px; margin: 0 auto; }
+.timeline-header { margin-bottom: 56px; max-width: 640px; }
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.timeline-month {
+  padding: 32px 28px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.timeline-month:last-child { border-right: none; }
+.timeline-month-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 12px;
+  display: block;
+}
+.timeline-month-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.timeline-month-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.timeline-item {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.timeline-item::before {
+  content: '·';
+  color: var(--purple);
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1;
+}
+.timeline-result {
+  background: var(--purple);
+  padding: 32px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 0;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  border: 1px solid var(--purple);
+  border-top: none;
+}
+.timeline-result-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+.timeline-result-value {
+  font-size: 14px;
+  color: white;
+  line-height: 1.55;
+}
+
+/* FUNDING */
+.funding-section {
+  background: var(--off-white);
+  padding: 96px 40px;
+}
+.funding-inner { max-width: 1160px; margin: 0 auto; }
+.funding-header { margin-bottom: 56px; }
+.funding-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.funding-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.funding-card-top {
+  background: var(--purple);
+  padding: 24px 28px;
+}
+.funding-inst-type {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 6px;
+}
+.funding-inst-name {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.funding-card-body { padding: 24px 28px; }
+.funding-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.funding-source {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+}
+.funding-source:last-child { border-bottom: none; padding-bottom: 0; }
+.funding-source-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.funding-source-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* VOICES */
+.voices-section {
+  background: var(--white);
+  padding: 96px 40px;
+  border-top: 1px solid var(--border);
+}
+.voices-inner { max-width: 1160px; margin: 0 auto; }
+.voices-header { text-align: center; margin-bottom: 56px; }
+.voices-header .section-eyebrow { justify-content: center; }
+.voices-header .section-eyebrow::before { display: none; }
+.voices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.voice-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+.voice-img-wrap {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.voice-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.5) saturate(0.7);
+  transition: transform 0.4s ease;
+}
+.voice-card:hover .voice-img { transform: scale(1.04); }
+.voice-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, var(--text-dark), transparent);
+}
+.voice-body {
+  background: var(--text-dark);
+  padding: 24px 28px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.voice-mark {
+  font-family: 'Fraunces', serif;
+  font-size: 40px;
+  line-height: 1;
+  color: #C084FC;
+  opacity: 0.4;
+  margin-bottom: -8px;
+}
+.voice-quote {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 20px;
+}
+.voice-attr { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 14px; }
+.voice-name { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
+.voice-role { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+/* CTA */
+.cta-section {
+  background: var(--off-white);
+  padding: 96px 40px;
+  border-top: 1px solid var(--border);
+}
+.cta-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.cta-who-list { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+.cta-who-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-mid);
+}
+.cta-who-row::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple);
+  flex-shrink: 0;
+}
+.inquiry-form {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 40px;
+}
+.form-title {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+.form-group { margin-bottom: 18px; }
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 7px;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text-dark);
+  background: var(--white);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+}
+.form-textarea { resize: vertical; min-height: 80px; }
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(123,47,190,0.08);
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-optional {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
+.form-submit {
+  width: 100%;
+  background: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 15px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--purple-dark); }
+.form-note { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 12px; line-height: 1.5; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero { min-height: 70vh; }
+  .hero-bottom, .demand-header, .credential-header, .faculty-grid,
+  .accred-header, .timeline-header + .timeline,
+  .funding-grid, .voices-grid, .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-institution-tags { justify-content: flex-start; }
+  .stats-inner { grid-template-columns: 1fr; border-left: none; }
+  .stat-block { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .tab-panel.active { grid-template-columns: 1fr; }
+  .tab-img { height: 260px; }
+  .demand-salary-callout { grid-template-columns: 1fr; }
+  .accred-cards { grid-template-columns: 1fr; }
+  .outcomes-grid { grid-template-columns: 1fr 1fr; }
+  .timeline { grid-template-columns: 1fr 1fr; }
+  .timeline-result { grid-template-columns: 1fr; }
+  .hero-content { padding: 0 24px 56px; }
+  .audiences-section, .demand-section, .credential-section, .faculty-section,
+  .accred-section, .timeline-section,
+  .funding-section, .voices-section, .cta-section { padding: 64px 24px; }
+  .stats-strip { padding: 0 24px; }
+}
+@media (max-width: 600px) {
+  .tab-nav { flex-direction: column; }
+  .tab-btn { border-right: none; border-bottom: 1px solid var(--border); }
+  .outcomes-grid, .form-row { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: 1fr; }
+  .funding-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Higher Education</div>
+    <h1>Every student on your campus is already using AI.<br>The question is whether your institution is <em>shaping how.</em></h1>
+    <div class="hero-bottom">
+      <p class="hero-sub">AI Essentials partners with community colleges, four-year institutions and continuing education divisions to build institution-wide AI readiness, with the credential architecture, faculty development, and accreditation documentation to match.</p>
+      <div class="hero-institution-tags">
+        <span class="inst-tag">Community Colleges</span>
+        <span class="inst-tag">Four-Year Institutions</span>
+        <span class="inst-tag">Continuing Education</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-block">
+      <div class="stat-n">56%</div>
+      <p class="stat-body">wage premium earned by workers with AI skills compared to peers in the same roles without them. That gap doubled in a single year and is accelerating.</p>
+      <div class="stat-source">PwC Global AI Jobs Barometer, 2025</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-n">9x</div>
+      <p class="stat-body">growth in job postings requiring generative AI skills outside of IT and computer science since 2022. Healthcare, business, law, and education are all driving this surge.</p>
+      <div class="stat-source">Lightcast, Beyond the Buzz, 2025</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-n">80%</div>
+      <p class="stat-body">of the engineering workforce will need to upskill in AI through 2027. The same reskilling pressure applies across every discipline your institution serves.</p>
+      <div class="stat-source">Gartner, 2025</div>
+    </div>
+  </div>
+</div>
+
+<!-- THREE AUDIENCES -->
+<section class="audiences-section">
+  <div class="audiences-inner">
+    <div class="audiences-header">
+      <div class="section-eyebrow">Who this is for</div>
+      <h2 class="section-title">One program. <em>Three institutions.</em></h2>
+      <p style="font-size:17px;color:var(--text-mid);line-height:1.75;margin-top:8px;max-width:680px;">AI Essentials adapts to the structure, funding, and mission of each institution type without requiring any of them to build something from scratch.</p>
+    </div>
+
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab(0)">Community Colleges</button>
+      <button class="tab-btn" onclick="switchTab(1)">Four-Year Institutions</button>
+      <button class="tab-btn" onclick="switchTab(2)">Continuing Education</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-0">
+      <div class="tab-img-wrap">
+        <img class="tab-img" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80" alt="Community college students" />
+        <div class="tab-img-label">
+          <div class="tab-img-tag">Community College</div>
+          <div class="tab-img-desc">Workforce-aligned AI credentials that complement existing associate pathways</div>
+        </div>
+      </div>
+      <div>
+        <div class="tab-content-eyebrow">Community Colleges</div>
+        <div class="tab-content-title">The fastest path from enrollment to AI-ready workforce credential</div>
+        <p class="tab-content-body">Community colleges sit at the intersection of higher education and workforce development. Your students are entering the workforce faster and with more immediate economic pressure than four-year students. AI Essentials delivers sector-specific AI credentials that stack on top of existing associate degrees and CTE pathways without requiring curriculum redesign.</p>
+        <div class="tab-outcomes">
+          <div class="tab-outcome">Sector-specific AI tracks across Healthcare, Business, Manufacturing, IT, Education, and Law</div>
+          <div class="tab-outcome">Stackable AI-Ready credentials that complement Associate of Applied Science degrees</div>
+          <div class="tab-outcome">Pre and post assessment data formatted for Perkins V and WIOA reporting</div>
+          <div class="tab-outcome">Faculty professional development in the same tracks your students complete</div>
+          <div class="tab-outcome">Rural and small campus delivery model built in from the start</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-1">
+      <div class="tab-img-wrap">
+        <img class="tab-img" src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=900&q=80" alt="Four-year university campus" />
+        <div class="tab-img-label">
+          <div class="tab-img-tag">Four-Year Institution</div>
+          <div class="tab-img-desc">AI credentials that live on transcripts and strengthen graduate employment outcomes</div>
+        </div>
+      </div>
+      <div>
+        <div class="tab-content-eyebrow">Four-Year Institutions</div>
+        <div class="tab-content-title">AI readiness that lives on the transcript and follows graduates into every career</div>
+        <p class="tab-content-body">Your graduates are entering a labor market where AI fluency is increasingly the difference between a good job offer and a great one. AI Essentials gives every student a sector-specific AI credential that complements their degree, strengthens their employment outcomes, and gives your institution measurable data for accreditation reviews and institutional effectiveness reporting.</p>
+        <div class="tab-outcomes">
+          <div class="tab-outcome">AI credentials that articulate alongside existing majors and minors</div>
+          <div class="tab-outcome">Discipline-specific tracks tied to your most popular degree programs</div>
+          <div class="tab-outcome">Pre and post skills documentation for institutional effectiveness reporting</div>
+          <div class="tab-outcome">Faculty development program that builds AI capacity across departments</div>
+          <div class="tab-outcome">Cohort reporting that supports HLC, SACSCOC, and regional accreditation narratives</div>
+        </div>
+        <div class="coe-callout">
+          <div class="coe-callout-icon">📍</div>
+          <p class="coe-callout-text"><strong>Colleges of Education:</strong> Meet us at the COE Annual Conference, San Diego, September 2026. Schedule a meeting to discuss AI Essentials for pre-service teacher programs.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-2">
+      <div class="tab-img-wrap">
+        <img class="tab-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80" alt="Continuing education cohort" />
+        <div class="tab-img-label">
+          <div class="tab-img-tag">Continuing Education</div>
+          <div class="tab-img-desc">Non-credit AI credentials that move fast and meet employer demand directly</div>
+        </div>
+      </div>
+      <div>
+        <div class="tab-content-eyebrow">Continuing Education</div>
+        <div class="tab-content-title">The fastest-moving division on campus is the right home for AI reskilling</div>
+        <p class="tab-content-body">Continuing education and workforce development divisions can deploy AI Essentials faster than any other unit on campus: no faculty senate approval, no curriculum committee review, no waiting for the next academic year. Your division exists to respond to what the labor market needs right now. AI fluency is at the top of that list.</p>
+        <div class="tab-outcomes">
+          <div class="tab-outcome">Non-credit AI credentials deployable within a single semester</div>
+          <div class="tab-outcome">WIOA and employer tuition assistance alignment for adult learners</div>
+          <div class="tab-outcome">Cohort model fits corporate training partnerships and employer-sponsored cohorts</div>
+          <div class="tab-outcome">Stackable toward credit-bearing programs for learners who want to continue</div>
+          <div class="tab-outcome">Revenue-generating model with institutional outcome documentation included</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPLOYER DEMAND -->
+<section class="demand-section">
+  <div class="demand-inner">
+    <div class="demand-header">
+      <div>
+        <div class="section-eyebrow">What the labor market is asking for</div>
+        <h2 class="section-title">Your graduates are entering a market that rewards <em>AI fluency above almost everything else</em></h2>
+        <p style="font-size:16px;color:var(--text-mid);line-height:1.8;margin-top:12px;">The data is not ambiguous. Employers across every sector are paying a significant premium for AI skills, and the gap between AI-fluent graduates and everyone else is widening faster than any institution can keep pace with through curriculum revision alone.</p>
+      </div>
+      <div>
+        <div class="demand-headline-stat">+28%</div>
+        <p class="demand-headline-label">salary premium for jobs requiring AI skills, equivalent to nearly $18,000 more per year than the same role without AI requirements.</p>
+        <div class="demand-source">Lightcast analysis of 1.3 billion job postings, 2025</div>
+      </div>
+    </div>
+
+    <div class="demand-bars">
+      <div class="demand-bar-row">
+        <div class="demand-bar-top">
+          <span class="demand-bar-role">Generative AI skills in non-IT roles</span>
+          <span class="demand-bar-growth">+800%</span>
+        </div>
+        <div class="demand-bar-track"><div class="demand-bar-fill" style="width:95%"></div></div>
+        <div class="demand-bar-note">Growth in job postings requiring generative AI skills outside IT and computer science since 2022. Source: Lightcast, 2025</div>
+      </div>
+      <div class="demand-bar-row">
+        <div class="demand-bar-top">
+          <span class="demand-bar-role">AI skills in healthcare job postings</span>
+          <span class="demand-bar-growth">+40%</span>
+        </div>
+        <div class="demand-bar-track"><div class="demand-bar-fill" style="width:52%"></div></div>
+        <div class="demand-bar-note">Increase in healthcare job postings requiring AI skills since 2020. Source: Deloitte Recruitment Efficiency Report, 2024</div>
+      </div>
+      <div class="demand-bar-row">
+        <div class="demand-bar-top">
+          <span class="demand-bar-role">Overall AI job postings year over year</span>
+          <span class="demand-bar-growth">+109%</span>
+        </div>
+        <div class="demand-bar-track"><div class="demand-bar-fill" style="width:75%"></div></div>
+        <div class="demand-bar-note">Surge in job postings requiring AI skills from 2024 to 2025. Source: Lightcast via edX, August 2025</div>
+      </div>
+      <div class="demand-bar-row">
+        <div class="demand-bar-top">
+          <span class="demand-bar-role">LinkedIn profiles adding AI skills</span>
+          <span class="demand-bar-growth">142x</span>
+        </div>
+        <div class="demand-bar-track"><div class="demand-bar-fill" style="width:88%"></div></div>
+        <div class="demand-bar-note">Increase in LinkedIn members adding AI skills to their profiles. Non-technical professionals growing at 160%. Source: Microsoft and LinkedIn Work Trend Index, 2024</div>
+      </div>
+    </div>
+
+    <div class="demand-salary-callout">
+      <div class="demand-salary-n">$18K</div>
+      <div>
+        <p class="demand-salary-text">The average additional annual salary earned by workers with AI skills compared to workers in the same roles without them. Your graduates will compete in this market. The question is which side of that gap they land on.</p>
+        <div class="demand-salary-source">Lightcast analysis of 1.3 billion job postings, 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIAL ARCHITECTURE -->
+<section class="credential-section">
+  <div class="credential-inner">
+    <div class="credential-header">
+      <div>
+        <div class="section-eyebrow">How it fits</div>
+        <h2 class="section-title">AI Essentials credentials <em>stack on what you already offer</em></h2>
+        <p style="font-size:16px;color:var(--text-mid);line-height:1.8;margin-top:12px;">We don't ask institutions to replace anything. The AI-Ready sector certificate sits alongside your existing degrees, certificates, and pathways, adding market value to what your students are already earning without displacing a single credit hour or curriculum requirement.</p>
+      </div>
+      <div class="credential-visual">
+        <div class="cred-row">
+          <div class="cred-existing">
+            <div class="cred-existing-label">Existing credential</div>
+            <div class="cred-existing-name">Associate of Applied Science in Health Sciences</div>
+          </div>
+          <div class="cred-plus">+</div>
+          <div class="cred-added">
+            <div class="cred-added-label">AI Essentials adds</div>
+            <div class="cred-added-name">AI-Ready Healthcare Professional Certificate</div>
+          </div>
+        </div>
+        <div class="cred-row">
+          <div class="cred-existing">
+            <div class="cred-existing-label">Existing credential</div>
+            <div class="cred-existing-name">Bachelor of Business Administration</div>
+          </div>
+          <div class="cred-plus">+</div>
+          <div class="cred-added">
+            <div class="cred-added-label">AI Essentials adds</div>
+            <div class="cred-added-name">AI-Ready Business Professional Certificate</div>
+          </div>
+        </div>
+        <div class="cred-row">
+          <div class="cred-existing">
+            <div class="cred-existing-label">Existing credential</div>
+            <div class="cred-existing-name">Bachelor of Science in Education</div>
+          </div>
+          <div class="cred-plus">+</div>
+          <div class="cred-added">
+            <div class="cred-added-label">AI Essentials adds</div>
+            <div class="cred-added-name">AI-Ready Educator Certificate</div>
+          </div>
+        </div>
+        <div class="cred-row">
+          <div class="cred-existing">
+            <div class="cred-existing-label">Existing credential</div>
+            <div class="cred-existing-name">Certificate in Manufacturing Technology</div>
+          </div>
+          <div class="cred-plus">+</div>
+          <div class="cred-added">
+            <div class="cred-added-label">AI Essentials adds</div>
+            <div class="cred-added-name">AI-Ready Manufacturing Certificate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACULTY TRACK -->
+<section class="faculty-section">
+  <div class="faculty-inner">
+    <div class="section-eyebrow">Faculty and staff development</div>
+    <h2 class="section-title">The one thing most AI training vendors <em>never address</em></h2>
+    <p style="font-size:17px;color:var(--text-mid);line-height:1.75;margin-top:8px;max-width:680px;">Faculty cannot teach AI fluency they don't have. Staff cannot implement AI workflows they've never practiced. AI Essentials is the only training program that addresses both sides of the campus simultaneously.</p>
+    <div class="faculty-grid">
+      <div class="faculty-problem">
+        <div class="faculty-problem-title">What most institutions are walking into</div>
+        <p class="faculty-problem-body">Students are arriving on campus having already used AI extensively. Faculty are behind. Administrators are making policy decisions without enough context. The institution is spending energy on AI governance conversations while the skills gap quietly widens.</p>
+        <div class="faculty-pain-points">
+          <div class="pain-point">
+            <span class="pain-point-icon">⚠️</span>
+            <span>Faculty in healthcare, business, and education departments have had little or no formal AI training in their discipline</span>
+          </div>
+          <div class="pain-point">
+            <span class="pain-point-icon">⚠️</span>
+            <span>Generic AI literacy workshops don't speak to the specific tools and workflows in each academic discipline</span>
+          </div>
+          <div class="pain-point">
+            <span class="pain-point-icon">⚠️</span>
+            <span>There is no documentation trail showing that your faculty are AI-ready, which accreditors are beginning to notice</span>
+          </div>
+        </div>
+      </div>
+      <div class="faculty-solution">
+        <div class="faculty-step">
+          <div class="faculty-step-num">1</div>
+          <div>
+            <div class="faculty-step-title">Faculty complete their discipline-specific track</div>
+            <div class="faculty-step-desc">A nursing faculty member completes the Healthcare track. A business professor completes the Business track. A law faculty member completes the Law track. Each one gets sector-specific training that actually applies to their classroom.</div>
+          </div>
+        </div>
+        <div class="faculty-step">
+          <div class="faculty-step-num">2</div>
+          <div>
+            <div class="faculty-step-title">Faculty earn the AI-Ready sector certificate</div>
+            <div class="faculty-step-desc">The same credential your students earn. Faculty now have documented, verifiable AI fluency in their discipline, something they can reference in promotion and tenure files and something your institution can reference in accreditation documentation.</div>
+          </div>
+        </div>
+        <div class="faculty-step">
+          <div class="faculty-step-num">3</div>
+          <div>
+            <div class="faculty-step-title">Faculty receive a pedagogical integration framework</div>
+            <div class="faculty-step-desc">A practical guide for bringing AI tools into their existing courses without disrupting core pedagogy. Covers academic integrity, responsible AI use, and how to assess AI-assisted student work.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATION -->
+<section class="accred-section">
+  <div class="accred-inner">
+    <div class="accred-header">
+      <div>
+        <div class="accred-eyebrow">Accreditation alignment</div>
+        <h2 class="accred-title">Accreditors are watching AI. <em>Your documentation needs to be ready.</em></h2>
+        <p class="accred-body">Regional accreditors are increasingly evaluating how institutions handle AI in their educational quality frameworks. SACSCOC issued formal guidance on AI in December 2024 and followed with Good Practices documentation in June 2025. HLC's revised Federal Compliance Requirements tighten expectations around institutional effectiveness, effective September 2026. Every AI Essentials deployment produces the documentation trail these frameworks are beginning to require.</p>
+      </div>
+      <div class="accred-alert">
+        <span class="accred-alert-tag">Active accreditor movement: 2024 to 2026</span>
+        <p class="accred-alert-text">SACSCOC issued AI guidance in December 2024. Programmatic accreditors including ABHES, ACCSC, and COE have all incorporated technology governance questions into their evaluation criteria. HLC tightens institutional effectiveness requirements in September 2026. Building AI documentation now positions your institution ahead of wherever the standards land.</p>
+      </div>
+    </div>
+
+    <div class="accred-cards">
+      <div class="accred-card">
+        <div class="accred-card-name">HLC</div>
+        <div class="accred-card-full">Higher Learning Commission</div>
+        <p class="accred-card-body">Covers institutions in 19 states. Revised Federal Compliance Requirements effective September 2026 tighten expectations around how technology resources support educational quality and institutional effectiveness.</p>
+        <div class="accred-map-item">AI Essentials cohort data supports Criterion 4: Teaching and Learning Quality and Improvement</div>
+        <div class="accred-map-item">Faculty AI certificates document Assumed Practices around technology in instruction</div>
+        <div class="accred-map-item">Pre and post assessment delta supports continuous improvement evidence</div>
+      </div>
+      <div class="accred-card">
+        <div class="accred-card-name">SACSCOC</div>
+        <div class="accred-card-full">Southern Association of Colleges and Schools</div>
+        <p class="accred-card-body">Covers institutions in 11 southern states. December 2024 AI guidance and June 2025 Good Practices documentation signal that AI governance is moving into formal evaluation frameworks.</p>
+        <div class="accred-map-item">Cohort impact reports support Standard 8.2 on student learning outcomes assessment</div>
+        <div class="accred-map-item">Faculty development documentation supports Standard 6 on faculty qualifications and credentials</div>
+        <div class="accred-map-item">Institution-wide AI deployment supports Quality Enhancement Plan narratives</div>
+      </div>
+      <div class="accred-card">
+        <div class="accred-card-name">WSCUC</div>
+        <div class="accred-card-full">WASC Senior College and University Commission</div>
+        <p class="accred-card-body">Covers institutions in California, Hawaii, and the Pacific. Standards for educational effectiveness and institutional capacity provide natural frameworks for documenting AI readiness as a quality indicator.</p>
+        <div class="accred-map-item">Pre and post assessment data supports Standard 2.6 on student learning outcomes</div>
+        <div class="accred-map-item">Credential attainment documentation supports Standard 4 on creating an organization committed to learning</div>
+        <div class="accred-map-item">Faculty AI development supports capacity and educational effectiveness standards</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DEPLOYMENT TIMELINE -->
+<section class="timeline-section">
+  <div class="timeline-inner">
+    <div class="timeline-header">
+      <div class="section-eyebrow">Deployment model</div>
+      <h2 class="section-title">Designed to fit inside a <em>single academic semester</em></h2>
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.75;margin-top:12px;">Most institutions start with a single department or pathway as a pilot. Here is what a full semester deployment looks like from first conversation to final report.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-month">
+        <span class="timeline-month-label">Weeks 1 to 2</span>
+        <div class="timeline-month-title">Setup and alignment</div>
+        <div class="timeline-month-items">
+          <div class="timeline-item">Select tracks based on your priority programs</div>
+          <div class="timeline-item">Configure cohort size and delivery format</div>
+          <div class="timeline-item">Brief faculty leads and department contacts</div>
+          <div class="timeline-item">Establish reporting parameters for your accreditor</div>
+        </div>
+      </div>
+      <div class="timeline-month">
+        <span class="timeline-month-label">Weeks 3 to 4</span>
+        <div class="timeline-month-title">Pre-assessment baseline</div>
+        <div class="timeline-month-items">
+          <div class="timeline-item">All students and participating faculty complete sector-specific AI readiness baseline</div>
+          <div class="timeline-item">Institution receives initial cohort baseline report</div>
+          <div class="timeline-item">Identifies highest-need learners for additional support</div>
+        </div>
+      </div>
+      <div class="timeline-month">
+        <span class="timeline-month-label">Weeks 5 to 14</span>
+        <div class="timeline-month-title">Active learning cohort</div>
+        <div class="timeline-month-items">
+          <div class="timeline-item">12 hours of scenario-based sector training</div>
+          <div class="timeline-item">Delivered in-person, hybrid, or fully online</div>
+          <div class="timeline-item">Faculty complete parallel professional development track</div>
+          <div class="timeline-item">Real-time completion tracking via cohort dashboard</div>
+        </div>
+      </div>
+      <div class="timeline-month">
+        <span class="timeline-month-label">Weeks 15 to 16</span>
+        <div class="timeline-month-title">Credential and reporting</div>
+        <div class="timeline-month-items">
+          <div class="timeline-item">Post-assessment completed by all learners</div>
+          <div class="timeline-item">AI-Ready sector certificates issued</div>
+          <div class="timeline-item">Cohort impact report delivered to institution</div>
+          <div class="timeline-item">Accreditation-ready documentation package prepared</div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-result">
+      <div>
+        <div class="timeline-result-label">What students receive</div>
+        <div class="timeline-result-value">A verifiable AI-Ready sector certificate, documented skills gain, and a competitive credential that complements their degree</div>
+      </div>
+      <div>
+        <div class="timeline-result-label">What faculty receive</div>
+        <div class="timeline-result-value">AI-Ready educator certificate, pedagogical integration framework, and verifiable professional development documentation</div>
+      </div>
+      <div>
+        <div class="timeline-result-label">What the institution receives</div>
+        <div class="timeline-result-value">Cohort impact report with pre and post data, credential attainment rates, and accreditation-ready documentation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNDING -->
+<section class="funding-section">
+  <div class="funding-inner">
+    <div class="funding-header">
+      <div class="section-eyebrow">Funding alignment</div>
+      <h2 class="section-title">The funding is there. <em>Here is where to find it.</em></h2>
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.75;margin-top:12px;">Every institution type has access to funding mechanisms that can support AI Essentials deployment. In most cases, existing grant structures already cover this type of workforce-aligned, credential-producing training.</p>
+    </div>
+    <div class="funding-grid">
+      <div class="funding-card">
+        <div class="funding-card-top">
+          <div class="funding-inst-type">Institution type</div>
+          <div class="funding-inst-name">Community Colleges</div>
+        </div>
+        <div class="funding-card-body">
+          <div class="funding-sources">
+            <div class="funding-source">
+              <div class="funding-source-name">Perkins V</div>
+              <div class="funding-source-note">Career and Technical Education funding explicitly supports sector-aligned credentials. AI Essentials outcome documentation maps directly to Perkins V performance indicators.</div>
+            </div>
+            <div class="funding-source">
+              <div class="funding-source-name">WIOA Title I and Title II</div>
+              <div class="funding-source-note">Workforce development and adult education funding. DOL August 2025 guidance explicitly authorizes AI literacy training under WIOA.</div>
+            </div>
+            <div class="funding-source">
+              <div class="funding-source-name">State Workforce Innovation Funds</div>
+              <div class="funding-source-note">Most states maintain discretionary workforce innovation funding that can be directed toward rapid-deployment AI training programs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="funding-card">
+        <div class="funding-card-top">
+          <div class="funding-inst-type">Institution type</div>
+          <div class="funding-inst-name">Four-Year Institutions</div>
+        </div>
+        <div class="funding-card-body">
+          <div class="funding-sources">
+            <div class="funding-source">
+              <div class="funding-source-name">Title IV and Institutional Aid</div>
+              <div class="funding-source-note">Stackable AI credentials that complement degree programs can be supported through existing financial aid structures when delivered as credit-bearing electives.</div>
+            </div>
+            <div class="funding-source">
+              <div class="funding-source-name">FIPSE AI in Education Grants</div>
+              <div class="funding-source-note">The Department of Education allocated $50M for AI in postsecondary education under 2025 FIPSE competition, with institutions as eligible recipients.</div>
+            </div>
+            <div class="funding-source">
+              <div class="funding-source-name">Lumina, Gates, and Mellon Foundation Grants</div>
+              <div class="funding-source-note">Ten major foundations launched a $500M five-year initiative in 2025 specifically targeting AI access and workforce preparation in higher education.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="funding-card">
+        <div class="funding-card-top">
+          <div class="funding-inst-type">Institution type</div>
+          <div class="funding-inst-name">Continuing Education</div>
+        </div>
+        <div class="funding-card-body">
+          <div class="funding-sources">
+            <div class="funding-source">
+              <div class="funding-source-name">WIOA Incumbent Worker Training</div>
+              <div class="funding-source-note">Continuing education divisions serving working adults can access incumbent worker training funds for employer-sponsored AI upskilling cohorts.</div>
+            </div>
+            <div class="funding-source">
+              <div class="funding-source-name">Employer Tuition Assistance</div>
+              <div class="funding-source-note">Corporate partners increasingly cover AI training costs for employees. Non-credit credential format makes employer reimbursement straightforward.</div>
+            </div>
+            <div class="funding-source">
+              <div class="funding-source-name">Professional Development Budgets</div>
+              <div class="funding-source-note">Many CE divisions operate on a revenue-generating model. AI Essentials credentials command strong enrollment demand given labor market signals.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="voices-section">
+  <div class="voices-inner">
+    <div class="voices-header">
+      <div class="section-eyebrow">From the people it reaches</div>
+      <h2 class="section-title">What changes when an institution deploys</h2>
+    </div>
+    <div class="voices-grid">
+      <div class="voice-card">
+        <div class="voice-img-wrap">
+          <img class="voice-img" src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=75" alt="Student in higher education" />
+        </div>
+        <div class="voice-body">
+          <div class="voice-mark">"</div>
+          <p class="voice-quote">I graduated with my nursing degree and an AI documentation certificate. When I interviewed, the hiring manager said it was the first time she had seen that combination. I started two weeks later.</p>
+          <div class="voice-attr">
+            <div class="voice-name">Nursing graduate, Healthcare track</div>
+            <div class="voice-role">Community college, AI Essentials cohort</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-img-wrap">
+          <img class="voice-img" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&q=75" alt="Faculty member" />
+        </div>
+        <div class="voice-body">
+          <div class="voice-mark">"</div>
+          <p class="voice-quote">I had been using AI myself but had no framework for bringing it into my classroom responsibly. The faculty track gave me both the tools and the confidence. Now my students are doing things with AI that I couldn't have taught them a year ago.</p>
+          <div class="voice-attr">
+            <div class="voice-name">Business faculty member, Business track</div>
+            <div class="voice-role">Four-year institution, faculty cohort</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="section-eyebrow">Start the conversation</div>
+      <h2 class="section-title">Bring AI Essentials to your <em>institution</em></h2>
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.8;margin-bottom:12px;">Tell us about your institution and we will follow up within two business days with a deployment recommendation tailored to your programs, your student population, and your reporting requirements.</p>
+      <div class="cta-who-list">
+        <div class="cta-who-row">VP of Workforce Development and Continuing Education</div>
+        <div class="cta-who-row">Deans and Department Chairs</div>
+        <div class="cta-who-row">Provosts and Chief Academic Officers</div>
+        <div class="cta-who-row">CTE Directors and Pathway Coordinators</div>
+        <div class="cta-who-row">Institutional Effectiveness and Accreditation Staff</div>
+        <div class="cta-who-row">Faculty seeking AI professional development</div>
+      </div>
+    </div>
+    <div class="inquiry-form">
+      <div class="form-title">Tell us about your institution</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First name</label>
+          <input type="text" class="form-input" placeholder="First name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last name</label>
+          <input type="text" class="form-input" placeholder="Last name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Institution name</label>
+        <input type="text" class="form-input" placeholder="Your college or university" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-input" placeholder="you@institution.edu" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Institution type</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select your institution type</option>
+          <option>Community College</option>
+          <option>Four-Year Public University</option>
+          <option>Four-Year Private Institution</option>
+          <option>College of Education</option>
+          <option>Continuing Education Division</option>
+          <option>Workforce Development Division</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Your role</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select your role</option>
+          <option>Provost or Chief Academic Officer</option>
+          <option>Dean or Department Chair</option>
+          <option>VP of Workforce or Continuing Education</option>
+          <option>CTE Director or Coordinator</option>
+          <option>Institutional Effectiveness or Accreditation</option>
+          <option>Faculty</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">What is your biggest AI challenge right now? <span class="form-optional">(optional)</span></label>
+        <textarea class="form-textarea" placeholder="Faculty readiness, student credential gaps, accreditation documentation, something else..."></textarea>
+      </div>
+      <button class="form-submit">Send inquiry</button>
+      <p class="form-note">We respond to all inquiries within two business days.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+function switchTab(index) {
+  document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', i === index);
+  });
+  document.querySelectorAll('.tab-panel').forEach((panel, i) => {
+    panel.classList.toggle('active', i === index);
+  });
+}
+</script>
+
+</body>
+</html>
