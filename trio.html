@@ -683,92 +683,55 @@ body {
   flex-shrink: 0;
 }
 
-/* FORM */
-.inquiry-form {
+/* CTA ACTION PANEL */
+.cta-action-panel {
   background: var(--off-white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  padding: 40px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.form-title {
+.cta-action-title {
   font-family: 'Fraunces', serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 300;
   color: var(--text-dark);
-  margin-bottom: 28px;
+  margin-bottom: 14px;
   letter-spacing: -0.01em;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-label {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 8px;
-  letter-spacing: 0.02em;
-}
-
-.form-input,
-.form-select {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-family: 'DM Sans', sans-serif;
+.cta-action-body {
   font-size: 15px;
-  color: var(--text-dark);
-  background: var(--white);
-  transition: border-color 0.15s;
-  appearance: none;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 380px;
 }
 
-.form-input:focus,
-.form-select:focus {
-  outline: none;
-  border-color: var(--purple);
-  box-shadow: 0 0 0 3px rgba(123,47,190,0.08);
-}
-
-.form-input::placeholder {
-  color: var(--text-muted);
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.form-submit {
-  width: 100%;
+.btn-learn-more {
+  display: inline-block;
   background: var(--purple);
   color: white;
-  border: none;
+  text-decoration: none;
   border-radius: 100px;
-  padding: 15px 24px;
+  padding: 16px 40px;
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   font-weight: 500;
-  cursor: pointer;
   transition: background 0.2s;
-  margin-top: 8px;
 }
 
-.form-submit:hover {
-  background: var(--purple-dark);
-}
+.btn-learn-more:hover { background: var(--purple-dark); }
 
-.form-note {
+.cta-action-note {
   font-size: 12px;
   color: var(--text-muted);
-  text-align: center;
-  margin-top: 12px;
-  line-height: 1.5;
+  margin-top: 16px;
 }
 
 /* RESPONSIVE */
@@ -1122,51 +1085,11 @@ body {
       </div>
     </div>
 
-    <div class="inquiry-form">
-      <div class="form-title">Tell us about your program</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">First name</label>
-          <input type="text" class="form-input" placeholder="First name" />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Last name</label>
-          <input type="text" class="form-input" placeholder="Last name" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Institution name</label>
-        <input type="text" class="form-input" placeholder="Your college or university" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email address</label>
-        <input type="email" class="form-input" placeholder="you@institution.edu" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">TRIO program type</label>
-        <select class="form-select">
-          <option value="" disabled selected>Select your program</option>
-          <option>Upward Bound</option>
-          <option>Upward Bound Math-Science</option>
-          <option>Student Support Services</option>
-          <option>Educational Opportunity Centers</option>
-          <option>Talent Search</option>
-          <option>Veterans Upward Bound</option>
-          <option>Ronald E. McNair Post-Baccalaureate</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Approximate cohort size</label>
-        <select class="form-select">
-          <option value="" disabled selected>Select a range</option>
-          <option>Under 25 students</option>
-          <option>25 to 50 students</option>
-          <option>50 to 100 students</option>
-          <option>100 or more students</option>
-        </select>
-      </div>
-      <button class="form-submit">Send inquiry</button>
-      <p class="form-note">We respond to all inquiries within two business days.</p>
+    <div class="cta-action-panel">
+      <div class="cta-action-title">Ready to talk?</div>
+      <p class="cta-action-body">Connect with our team to discuss a cohort deployment tailored to your TRIO program type, student population, and reporting requirements.</p>
+      <a href="https://essentials-ai.com/contact-us/" class="btn-learn-more">Learn More</a>
+      <p class="cta-action-note">We respond to all inquiries within two business days.</p>
     </div>
   </div>
 </section>
