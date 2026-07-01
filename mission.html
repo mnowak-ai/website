@@ -79,13 +79,8 @@ body {
   line-height: 1.78;
   max-width: 500px;
 }
-.hero-img-col {
-  position: relative;
-}
-.hero-img-wrap {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
+.hero-img-col { position: relative; }
+.hero-img-wrap { border-radius: var(--radius-lg); overflow: hidden; }
 .hero-img {
   width: 100%;
   height: 480px;
@@ -111,23 +106,11 @@ body {
   line-height: 1;
   margin-bottom: 4px;
 }
-.hero-stat-l {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.4;
-  max-width: 140px;
-}
+.hero-stat-l { font-size: 13px; color: var(--text-muted); line-height: 1.4; max-width: 140px; }
 
 /* STATEMENT SECTION */
-.statement-section {
-  background: var(--purple);
-  padding: 80px 40px;
-}
-.statement-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
+.statement-section { background: var(--purple); padding: 80px 40px; }
+.statement-inner { max-width: 900px; margin: 0 auto; text-align: center; }
 .statement-label {
   font-size: 11px;
   font-weight: 500;
@@ -140,8 +123,7 @@ body {
   justify-content: center;
   gap: 12px;
 }
-.statement-label::before,
-.statement-label::after {
+.statement-label::before, .statement-label::after {
   content: '';
   display: block;
   width: 40px;
@@ -156,10 +138,7 @@ body {
   line-height: 1.45;
   letter-spacing: -0.01em;
 }
-.statement-text em {
-  font-style: italic;
-  color: rgba(255,255,255,0.65);
-}
+.statement-text em { font-style: italic; color: rgba(255,255,255,0.65); }
 
 /* STORY SECTION */
 .story-section {
@@ -175,7 +154,6 @@ body {
   gap: 80px;
   align-items: start;
 }
-.story-sidebar {}
 .story-sidebar-eyebrow {
   font-size: 11px;
   font-weight: 500;
@@ -187,13 +165,7 @@ body {
   align-items: center;
   gap: 10px;
 }
-.story-sidebar-eyebrow::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--purple);
-}
+.story-sidebar-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--purple); }
 .story-sidebar-title {
   font-family: 'Fraunces', serif;
   font-size: 32px;
@@ -203,10 +175,7 @@ body {
   letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
-.story-sidebar-title em {
-  font-style: italic;
-  color: var(--purple);
-}
+.story-sidebar-title em { font-style: italic; color: var(--purple); }
 .story-sidebar-pull {
   font-family: 'Fraunces', serif;
   font-size: 16px;
@@ -218,32 +187,13 @@ body {
   border-left: 3px solid var(--border);
   margin-top: 32px;
 }
-.story-body {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.story-para {
-  font-size: 17px;
-  color: var(--text-mid);
-  line-height: 1.85;
-}
-.story-para strong {
-  color: var(--text-dark);
-  font-weight: 500;
-}
-.story-divider {
-  width: 48px;
-  height: 2px;
-  background: var(--purple);
-  margin: 8px 0;
-}
+.story-body { display: flex; flex-direction: column; gap: 20px; }
+.story-para { font-size: 17px; color: var(--text-mid); line-height: 1.85; }
+.story-para strong { color: var(--text-dark); font-weight: 500; }
+.story-divider { width: 48px; height: 2px; background: var(--purple); margin: 8px 0; }
 
 /* BELIEF SECTION */
-.belief-section {
-  background: var(--off-white);
-  padding: 96px 40px;
-}
+.belief-section { background: var(--off-white); padding: 96px 40px; }
 .belief-inner { max-width: 1160px; margin: 0 auto; }
 .belief-header { text-align: center; max-width: 640px; margin: 0 auto 60px; }
 .belief-eyebrow {
@@ -258,7 +208,6 @@ body {
   justify-content: center;
   gap: 10px;
 }
-.belief-eyebrow::before { display: none; }
 .belief-title {
   font-family: 'Fraunces', serif;
   font-size: clamp(28px, 3.5vw, 44px);
@@ -269,11 +218,7 @@ body {
   margin-bottom: 16px;
 }
 .belief-title em { font-style: italic; color: var(--purple); }
-.belief-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+.belief-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .belief-card {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -281,15 +226,8 @@ body {
   padding: 32px 28px;
   transition: box-shadow 0.2s, transform 0.2s;
 }
-.belief-card:hover {
-  box-shadow: 0 12px 40px rgba(123,47,190,0.1);
-  transform: translateY(-3px);
-}
-.belief-icon {
-  font-size: 28px;
-  margin-bottom: 16px;
-  display: block;
-}
+.belief-card:hover { box-shadow: 0 12px 40px rgba(123,47,190,0.1); transform: translateY(-3px); }
+.belief-icon { font-size: 28px; margin-bottom: 16px; display: block; }
 .belief-card-title {
   font-family: 'Fraunces', serif;
   font-size: 20px;
@@ -299,11 +237,7 @@ body {
   line-height: 1.25;
   letter-spacing: -0.01em;
 }
-.belief-card-body {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.72;
-}
+.belief-card-body { font-size: 14px; color: var(--text-muted); line-height: 1.72; }
 
 /* PROOF SECTION */
 .proof-section {
@@ -312,17 +246,8 @@ body {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-.proof-inner {
-  max-width: 1160px;
-  margin: 0 auto;
-}
-.proof-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  margin-bottom: 64px;
-}
+.proof-inner { max-width: 1160px; margin: 0 auto; }
+.proof-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 64px; }
 .proof-eyebrow {
   font-size: 11px;
   font-weight: 500;
@@ -334,13 +259,7 @@ body {
   align-items: center;
   gap: 10px;
 }
-.proof-eyebrow::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--purple);
-}
+.proof-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--purple); }
 .proof-title {
   font-family: 'Fraunces', serif;
   font-size: clamp(28px, 3.5vw, 44px);
@@ -350,11 +269,7 @@ body {
   letter-spacing: -0.02em;
 }
 .proof-title em { font-style: italic; color: var(--purple); }
-.proof-sub {
-  font-size: 16px;
-  color: var(--text-mid);
-  line-height: 1.8;
-}
+.proof-sub { font-size: 16px; color: var(--text-mid); line-height: 1.8; }
 .proof-numbers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -363,12 +278,7 @@ body {
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
-.proof-num {
-  padding: 40px 32px;
-  border-right: 1px solid var(--border);
-  text-align: center;
-  position: relative;
-}
+.proof-num { padding: 40px 32px; border-right: 1px solid var(--border); text-align: center; }
 .proof-num:last-child { border-right: none; }
 .proof-num-n {
   font-family: 'Fraunces', serif;
@@ -379,23 +289,9 @@ body {
   margin-bottom: 10px;
   letter-spacing: -0.02em;
 }
-.proof-num-label {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-dark);
-  margin-bottom: 6px;
-}
-.proof-num-sub {
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-.proof-channels {
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-}
+.proof-num-label { font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 6px; }
+.proof-num-sub { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+.proof-channels { margin-top: 48px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
 .proof-channel {
   background: var(--off-white);
   border-radius: var(--radius-md);
@@ -404,24 +300,12 @@ body {
   text-align: center;
   transition: all 0.2s;
 }
-.proof-channel:hover {
-  border-color: var(--purple);
-  background: var(--purple-xlight);
-  transform: translateY(-2px);
-}
+.proof-channel:hover { border-color: var(--purple); background: var(--purple-xlight); transform: translateY(-2px); }
 .proof-channel-icon { font-size: 22px; margin-bottom: 8px; display: block; }
-.proof-channel-name {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-dark);
-  line-height: 1.3;
-}
+.proof-channel-name { font-size: 12px; font-weight: 500; color: var(--text-dark); line-height: 1.3; }
 
-/* WHO WE SERVE STRIP */
-.who-section {
-  background: var(--off-white);
-  padding: 96px 40px;
-}
+/* WHO WE SERVE */
+.who-section { background: var(--off-white); padding: 96px 40px; }
 .who-inner { max-width: 1160px; margin: 0 auto; }
 .who-header { margin-bottom: 56px; }
 .who-eyebrow {
@@ -435,13 +319,7 @@ body {
   align-items: center;
   gap: 10px;
 }
-.who-eyebrow::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--purple);
-}
+.who-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--purple); }
 .who-title {
   font-family: 'Fraunces', serif;
   font-size: clamp(28px, 3.5vw, 44px);
@@ -471,31 +349,12 @@ body {
 }
 .who-row:last-child { border-bottom: none; }
 .who-row:hover { background: var(--purple-xlight); }
-.who-row-icon {
-  font-size: 22px;
-  text-align: center;
-  padding: 22px 0;
-  border-right: 1px solid var(--border);
-}
-.who-row-name {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text-dark);
-  padding: 22px 24px;
-  border-right: 1px solid var(--border);
-}
-.who-row-desc {
-  font-size: 13px;
-  color: var(--text-muted);
-  padding: 22px 24px;
-  line-height: 1.55;
-}
+.who-row-icon { font-size: 22px; text-align: center; padding: 22px 0; border-right: 1px solid var(--border); }
+.who-row-name { font-size: 15px; font-weight: 500; color: var(--text-dark); padding: 22px 24px; border-right: 1px solid var(--border); }
+.who-row-desc { font-size: 13px; color: var(--text-muted); padding: 22px 24px; line-height: 1.55; }
 
 /* APPROACH SECTION */
-.approach-section {
-  background: var(--text-dark);
-  padding: 96px 40px;
-}
+.approach-section { background: var(--text-dark); padding: 96px 40px; }
 .approach-inner { max-width: 1160px; margin: 0 auto; }
 .approach-eyebrow {
   font-size: 11px;
@@ -508,13 +367,7 @@ body {
   align-items: center;
   gap: 10px;
 }
-.approach-eyebrow::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 1px;
-  background: rgba(255,255,255,0.25);
-}
+.approach-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: rgba(255,255,255,0.25); }
 .approach-title {
   font-family: 'Fraunces', serif;
   font-size: clamp(28px, 3.5vw, 46px);
@@ -526,18 +379,8 @@ body {
   max-width: 720px;
 }
 .approach-title em { font-style: italic; color: #C084FC; }
-.approach-sub {
-  font-size: 17px;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.75;
-  max-width: 640px;
-  margin-bottom: 64px;
-}
-.approach-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
+.approach-sub { font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 640px; margin-bottom: 64px; }
+.approach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .approach-card {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
@@ -564,23 +407,11 @@ body {
   margin-bottom: 12px;
   letter-spacing: -0.01em;
 }
-.approach-card-body {
-  font-size: 14px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.72;
-}
+.approach-card-body { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.72; }
 
 /* CTA */
-.cta-section {
-  background: var(--white);
-  padding: 96px 40px;
-  border-top: 1px solid var(--border);
-}
-.cta-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
+.cta-section { background: var(--white); padding: 96px 40px; border-top: 1px solid var(--border); }
+.cta-inner { max-width: 800px; margin: 0 auto; text-align: center; }
 .cta-eyebrow {
   font-size: 11px;
   font-weight: 500;
@@ -593,7 +424,6 @@ body {
   justify-content: center;
   gap: 10px;
 }
-.cta-eyebrow::before { display: none; }
 .cta-title {
   font-family: 'Fraunces', serif;
   font-size: clamp(30px, 4vw, 50px);
@@ -604,45 +434,50 @@ body {
   margin-bottom: 20px;
 }
 .cta-title em { font-style: italic; color: var(--purple); }
-.cta-sub {
-  font-size: 17px;
-  color: var(--text-mid);
-  line-height: 1.75;
-  margin-bottom: 44px;
-}
-.cta-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+.cta-sub { font-size: 17px; color: var(--text-mid); line-height: 1.75; margin-bottom: 44px; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* BUTTONS — WordPress-safe with !important overrides */
 .btn-primary {
-  background: var(--purple);
-  color: white;
-  padding: 16px 34px;
-  border-radius: 100px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  display: inline-block;
+  background: #7B2FBE !important;
+  color: #ffffff !important;
+  padding: 16px 34px !important;
+  border-radius: 100px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
   transition: background 0.2s;
+  border: none !important;
+  box-shadow: none !important;
 }
-.btn-primary:hover { background: var(--purple-dark); }
+.btn-primary:visited { color: #ffffff !important; }
+.btn-primary:hover, .btn-primary:focus {
+  background: #5A1F8A !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
 .btn-secondary {
-  background: transparent;
-  color: var(--purple);
-  padding: 16px 34px;
-  border-radius: 100px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  text-decoration: none;
-  display: inline-block;
-  border: 1px solid var(--border);
+  background: transparent !important;
+  color: #7B2FBE !important;
+  padding: 16px 34px !important;
+  border-radius: 100px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  border: 1px solid #E8E2F0 !important;
+  box-shadow: none !important;
   transition: border-color 0.2s;
 }
-.btn-secondary:hover { border-color: var(--purple); }
+.btn-secondary:visited { color: #7B2FBE !important; }
+.btn-secondary:hover, .btn-secondary:focus {
+  border-color: #7B2FBE !important;
+  color: #7B2FBE !important;
+  text-decoration: none !important;
+}
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
@@ -678,9 +513,7 @@ body {
     </div>
     <div class="hero-img-col">
       <div class="hero-img-wrap">
-        <img class="hero-img"
-          src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80"
-          alt="Diverse workforce learners in training" />
+        <img class="hero-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80" alt="Diverse workforce learners in training" />
       </div>
       <div class="hero-stat-float">
         <div class="hero-stat-n">350K+</div>
@@ -773,7 +606,6 @@ body {
       </div>
       <p class="proof-sub">These are not platform signups or email subscribers. These are learners who completed sector-specific AI training through institutional partners, earned credentials, and generated the pre and post assessment data their programs needed to document impact.</p>
     </div>
-
     <div class="proof-numbers">
       <div class="proof-num">
         <div class="proof-num-n">350K+</div>
@@ -791,32 +623,13 @@ body {
         <div class="proof-num-sub">Healthcare, Business, Manufacturing, Technology, Education, and Law</div>
       </div>
     </div>
-
     <div class="proof-channels">
-      <div class="proof-channel">
-        <span class="proof-channel-icon">🎓</span>
-        <div class="proof-channel-name">TRIO Programs</div>
-      </div>
-      <div class="proof-channel">
-        <span class="proof-channel-icon">🔧</span>
-        <div class="proof-channel-name">CTE Programs</div>
-      </div>
-      <div class="proof-channel">
-        <span class="proof-channel-icon">🏫</span>
-        <div class="proof-channel-name">Community Colleges</div>
-      </div>
-      <div class="proof-channel">
-        <span class="proof-channel-icon">📚</span>
-        <div class="proof-channel-name">K-12 Districts</div>
-      </div>
-      <div class="proof-channel">
-        <span class="proof-channel-icon">💼</span>
-        <div class="proof-channel-name">Workforce Dev Orgs</div>
-      </div>
-      <div class="proof-channel">
-        <span class="proof-channel-icon">🏛️</span>
-        <div class="proof-channel-name">Higher Education</div>
-      </div>
+      <div class="proof-channel"><span class="proof-channel-icon">🎓</span><div class="proof-channel-name">TRIO Programs</div></div>
+      <div class="proof-channel"><span class="proof-channel-icon">🔧</span><div class="proof-channel-name">CTE Programs</div></div>
+      <div class="proof-channel"><span class="proof-channel-icon">🏫</span><div class="proof-channel-name">Community Colleges</div></div>
+      <div class="proof-channel"><span class="proof-channel-icon">📚</span><div class="proof-channel-name">K-12 Districts</div></div>
+      <div class="proof-channel"><span class="proof-channel-icon">💼</span><div class="proof-channel-name">Workforce Dev Orgs</div></div>
+      <div class="proof-channel"><span class="proof-channel-icon">🏛️</span><div class="proof-channel-name">Higher Education</div></div>
     </div>
   </div>
 </section>
@@ -901,8 +714,8 @@ body {
     <h2 class="cta-title">Ready to bring AI Essentials to <em>your institution?</em></h2>
     <p class="cta-sub">Whether you run a TRIO program, a workforce development organization, a community college, or a school district, we have a deployment model built for your institution type, your funding structure, and your reporting requirements.</p>
     <div class="cta-buttons">
-      <a href="#" class="btn-primary">Find your track</a>
-      <a href="#" class="btn-secondary">Talk to our team</a>
+      <a href="https://essentials-ai.com/learning-pathways/" class="btn-primary">Find your track</a>
+      <a href="https://essentials-ai.com/contact-us/" class="btn-secondary">Learn More</a>
     </div>
   </div>
 </section>
