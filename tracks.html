@@ -39,7 +39,6 @@ body {
   padding: 80px 40px 64px;
   border-bottom: 1px solid var(--border);
 }
-
 .page-eyebrow {
   font-size: 11px;
   font-weight: 500;
@@ -51,7 +50,6 @@ body {
   align-items: center;
   gap: 10px;
 }
-
 .page-eyebrow::before {
   content: '';
   display: block;
@@ -59,7 +57,6 @@ body {
   height: 2px;
   background: var(--purple);
 }
-
 .page-title {
   font-family: 'Fraunces', serif;
   font-size: clamp(36px, 5vw, 64px);
@@ -70,12 +67,7 @@ body {
   margin-bottom: 20px;
   max-width: 760px;
 }
-
-.page-title em {
-  font-style: italic;
-  color: var(--purple);
-}
-
+.page-title em { font-style: italic; color: var(--purple); }
 .page-sub {
   font-size: 18px;
   color: var(--text-mid);
@@ -83,15 +75,12 @@ body {
   max-width: 600px;
 }
 
-
-
 /* TRACKS CONTAINER */
 .tracks-section {
   padding: 64px 40px;
   max-width: 1160px;
   margin: 0 auto;
 }
-
 .tracks-list {
   display: flex;
   flex-direction: column;
@@ -110,13 +99,7 @@ body {
   gap: 60px;
   align-items: center;
 }
-
-.page-header-left {}
-
-.page-header-images {
-  height: 320px;
-}
-
+.page-header-images { height: 320px; }
 .header-img-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -126,7 +109,6 @@ body {
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
-
 .header-img {
   width: 100%;
   height: 100%;
@@ -134,10 +116,7 @@ body {
   display: block;
   filter: brightness(0.9) saturate(0.85);
 }
-
-.header-img-tall {
-  grid-row: 1 / 3;
-}
+.header-img-tall { grid-row: 1 / 3; }
 
 /* WORKDAY IMAGE */
 .workday-img {
@@ -151,16 +130,13 @@ body {
   filter: brightness(0.88) saturate(0.85);
 }
 
-
+.track-card {
   background: var(--white);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
   transition: background 0.2s;
 }
-
-.track-card:last-child {
-  border-bottom: none;
-}
+.track-card:last-child { border-bottom: none; }
 
 .track-header {
   display: grid;
@@ -172,11 +148,7 @@ body {
   user-select: none;
   transition: background 0.15s;
 }
-
-.track-header:hover {
-  background: var(--purple-xlight);
-}
-
+.track-header:hover { background: var(--purple-xlight); }
 .track-card.open .track-header {
   background: var(--purple-xlight);
   border-bottom: 1px solid var(--border);
@@ -193,12 +165,7 @@ body {
   flex-shrink: 0;
   transition: transform 0.2s;
 }
-
-.track-card.open .track-icon-wrap {
-  transform: scale(1.08);
-}
-
-.track-header-text {}
+.track-card.open .track-icon-wrap { transform: scale(1.08); }
 
 .track-name {
   font-family: 'Fraunces', serif;
@@ -208,22 +175,10 @@ body {
   margin-bottom: 4px;
   letter-spacing: -0.01em;
 }
+.track-tagline { font-size: 15px; color: var(--text-muted); }
 
-.track-tagline {
-  font-size: 15px;
-  color: var(--text-muted);
-}
-
-.track-meta {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.track-meta-item {
-  text-align: center;
-}
-
+.track-meta { display: flex; gap: 20px; align-items: center; }
+.track-meta-item { text-align: center; }
 .track-meta-n {
   font-family: 'Fraunces', serif;
   font-size: 22px;
@@ -231,13 +186,7 @@ body {
   color: var(--purple);
   line-height: 1;
 }
-
-.track-meta-l {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 2px;
-  white-space: nowrap;
-}
+.track-meta-l { font-size: 11px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; }
 
 .track-chevron {
   width: 32px;
@@ -252,7 +201,6 @@ body {
   transition: transform 0.3s, background 0.2s, border-color 0.2s;
   flex-shrink: 0;
 }
-
 .track-card.open .track-chevron {
   transform: rotate(180deg);
   background: var(--purple);
@@ -261,21 +209,9 @@ body {
 }
 
 /* EXPANDED CONTENT */
-.track-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.track-card.open .track-body {
-  max-height: 1000px;
-}
-
-.track-body-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0;
-}
+.track-body { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+.track-card.open .track-body { max-height: 1000px; }
+.track-body-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
 
 /* WORKDAY STRIP */
 .workday-col {
@@ -283,7 +219,6 @@ body {
   border-right: 1px solid var(--border);
   background: var(--off-white);
 }
-
 .workday-label {
   font-size: 11px;
   font-weight: 600;
@@ -292,14 +227,7 @@ body {
   color: var(--purple);
   margin-bottom: 20px;
 }
-
-.workday-moments {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  position: relative;
-}
-
+.workday-moments { display: flex; flex-direction: column; gap: 0; position: relative; }
 .workday-moments::before {
   content: '';
   position: absolute;
@@ -309,18 +237,8 @@ body {
   width: 1px;
   background: var(--border);
 }
-
-.moment {
-  display: flex;
-  gap: 16px;
-  padding-bottom: 24px;
-  position: relative;
-}
-
-.moment:last-child {
-  padding-bottom: 0;
-}
-
+.moment { display: flex; gap: 16px; padding-bottom: 24px; position: relative; }
+.moment:last-child { padding-bottom: 0; }
 .moment-dot {
   width: 8px;
   height: 8px;
@@ -332,35 +250,12 @@ body {
   z-index: 1;
   margin-left: 16px;
 }
-
-.moment-time {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--purple);
-  margin-bottom: 3px;
-  text-transform: uppercase;
-}
-
-.moment-task {
-  font-size: 15px;
-  color: var(--text-mid);
-  line-height: 1.5;
-}
-
-.moment-ai {
-  font-size: 13px;
-  color: var(--purple-light);
-  font-style: italic;
-  margin-top: 3px;
-}
+.moment-time { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--purple); margin-bottom: 3px; text-transform: uppercase; }
+.moment-task { font-size: 15px; color: var(--text-mid); line-height: 1.5; }
+.moment-ai { font-size: 13px; color: var(--purple-light); font-style: italic; margin-top: 3px; }
 
 /* OUTCOMES COL */
-.outcomes-col {
-  padding: 36px;
-  border-right: 1px solid var(--border);
-}
-
+.outcomes-col { padding: 36px; border-right: 1px solid var(--border); }
 .col-label {
   font-size: 11px;
   font-weight: 600;
@@ -369,87 +264,18 @@ body {
   color: var(--purple);
   margin-bottom: 20px;
 }
-
-.outcome-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
-}
-
-.outcome-list li {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 15px;
-  color: var(--text-mid);
-  line-height: 1.5;
-}
-
-.outcome-list li::before {
-  content: '✓';
-  color: var(--purple);
-  font-weight: 600;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.tools-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-.tool-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.tool-chip {
-  font-size: 11px;
-  font-weight: 500;
-  padding: 4px 11px;
-  border-radius: 100px;
-  background: var(--purple-xlight);
-  color: var(--purple-dark);
-}
+.outcome-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.outcome-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--text-mid); line-height: 1.5; }
+.outcome-list li::before { content: '✓'; color: var(--purple); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+.tools-label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+.tool-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.tool-chip { font-size: 11px; font-weight: 500; padding: 4px 11px; border-radius: 100px; background: var(--purple-xlight); color: var(--purple-dark); }
 
 /* CREDENTIAL COL */
-.credential-col {
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.credential-card {
-  background: var(--purple);
-  border-radius: var(--radius-md);
-  padding: 24px;
-  color: white;
-}
-
-.credential-title {
-  font-family: 'Fraunces', serif;
-  font-size: 18px;
-  font-weight: 300;
-  color: white;
-  margin-bottom: 8px;
-  line-height: 1.3;
-}
-
-.credential-desc {
-  font-size: 14px;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
+.credential-col { padding: 36px; display: flex; flex-direction: column; gap: 20px; }
+.credential-card { background: var(--purple); border-radius: var(--radius-md); padding: 24px; color: white; }
+.credential-title { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 300; color: white; margin-bottom: 8px; line-height: 1.3; }
+.credential-desc { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.6; margin-bottom: 16px; }
 .credential-badge {
   display: inline-flex;
   align-items: center;
@@ -462,67 +288,34 @@ body {
   border-radius: 100px;
   border: 1px solid rgba(255,255,255,0.25);
 }
+.who-serves { background: var(--off-white); border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border); }
+.who-serves-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+.who-list { display: flex; flex-direction: column; gap: 6px; }
+.who-item { font-size: 14px; color: var(--text-mid); display: flex; align-items: center; gap: 8px; }
+.who-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
 
-.who-serves {
-  background: var(--off-white);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  border: 1px solid var(--border);
-}
-
-.who-serves-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-.who-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.who-item {
-  font-size: 14px;
-  color: var(--text-mid);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.who-item::before {
-  content: '';
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--purple);
-  flex-shrink: 0;
-}
-
-
-/* TRACK CTA */
+/* TRACK CTA — WordPress-safe */
 .track-cta {
-  display: block;
-  text-align: center;
-  background: var(--white);
-  color: var(--purple);
-  border: 1.5px solid var(--purple);
-  border-radius: 100px;
-  padding: 13px 24px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
+  display: block !important;
+  text-align: center !important;
+  background: transparent !important;
+  color: #7B2FBE !important;
+  border: 1.5px solid #7B2FBE !important;
+  border-radius: 100px !important;
+  padding: 13px 24px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
   transition: background 0.2s, color 0.2s;
   margin-top: 4px;
+  box-shadow: none !important;
 }
-
-.track-cta:hover {
-  background: var(--purple);
-  color: white;
+.track-cta:visited { color: #7B2FBE !important; }
+.track-cta:hover, .track-cta:focus {
+  background: #7B2FBE !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
 }
 
 /* ASSESSMENT SECTION */
@@ -531,7 +324,6 @@ body {
   padding: 80px 40px;
   border-top: 1px solid var(--border);
 }
-
 .assessment-inner {
   max-width: 1160px;
   margin: 0 auto;
@@ -540,7 +332,6 @@ body {
   gap: 80px;
   align-items: center;
 }
-
 .assessment-eyebrow {
   font-size: 11px;
   font-weight: 500;
@@ -552,15 +343,7 @@ body {
   align-items: center;
   gap: 10px;
 }
-
-.assessment-eyebrow::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 2px;
-  background: var(--purple);
-}
-
+.assessment-eyebrow::before { content: ''; display: block; width: 28px; height: 2px; background: var(--purple); }
 .assessment-title {
   font-family: 'Fraunces', serif;
   font-size: clamp(26px, 3vw, 38px);
@@ -570,19 +353,8 @@ body {
   letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
-
-.assessment-desc {
-  font-size: 15px;
-  color: var(--text-mid);
-  line-height: 1.75;
-}
-
-.assessment-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
+.assessment-desc { font-size: 15px; color: var(--text-mid); line-height: 1.75; }
+.assessment-steps { display: flex; flex-direction: column; gap: 0; }
 .assessment-step {
   display: flex;
   gap: 24px;
@@ -592,14 +364,7 @@ body {
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
 }
-
-.assessment-connector {
-  width: 1px;
-  height: 16px;
-  background: var(--border);
-  margin-left: 44px;
-}
-
+.assessment-connector { width: 1px; height: 16px; background: var(--border); margin-left: 44px; }
 .assessment-step-num {
   font-family: 'Fraunces', serif;
   font-size: 28px;
@@ -610,20 +375,88 @@ body {
   width: 36px;
   padding-top: 2px;
 }
+.assessment-step-name { font-weight: 600; font-size: 15px; color: var(--text-dark); margin-bottom: 6px; }
+.assessment-step-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
 
-.assessment-step-name {
-  font-weight: 600;
-  font-size: 15px;
+/* BOTTOM CTA SECTION */
+.bottom-cta-section {
+  background: var(--off-white);
+  padding: 80px 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.bottom-cta-inner { max-width: 700px; margin: 0 auto; }
+.bottom-cta-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.bottom-cta-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 300;
   color: var(--text-dark);
-  margin-bottom: 6px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
 }
-
-.assessment-step-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.65;
+.bottom-cta-title em { font-style: italic; color: var(--purple); }
+.bottom-cta-sub {
+  font-size: 17px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 40px;
 }
+.bottom-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* BOTTOM CTA BUTTONS — WordPress-safe */
+.btn-primary {
+  background: #7B2FBE !important;
+  color: #ffffff !important;
+  padding: 16px 36px !important;
+  border-radius: 100px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: background 0.2s;
+}
+.btn-primary:visited { color: #ffffff !important; }
+.btn-primary:hover, .btn-primary:focus {
+  background: #5A1F8A !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+.btn-outline {
+  background: transparent !important;
+  color: #7B2FBE !important;
+  padding: 16px 36px !important;
+  border-radius: 100px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  border: 1.5px solid #7B2FBE !important;
+  box-shadow: none !important;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline:visited { color: #7B2FBE !important; }
+.btn-outline:hover, .btn-outline:focus {
+  background: #7B2FBE !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
@@ -638,11 +471,12 @@ body {
   .page-header-inner { grid-template-columns: 1fr; gap: 32px; }
   .page-header-images { display: none; }
   .workday-img { width: calc(100% + 48px); margin-left: -24px; }
+  .bottom-cta-section { padding: 64px 24px; }
 }
-
 @media (max-width: 600px) {
   .track-name { font-size: 18px; }
   .track-tagline { display: none; }
+  .bottom-cta-buttons { flex-direction: column; align-items: center; }
 }
 </style>
 </head>
@@ -666,8 +500,6 @@ body {
   </div>
 </div>
 
-
-
 <!-- TRACKS -->
 <div class="tracks-section">
   <div class="tracks-list">
@@ -681,14 +513,8 @@ body {
           <div class="track-tagline">For teachers, administrators, and instructional staff at every level</div>
         </div>
         <div class="track-meta">
-          <div class="track-meta-item">
-            <div class="track-meta-n">8</div>
-            <div class="track-meta-l">Core modules</div>
-          </div>
-          <div class="track-meta-item">
-            <div class="track-meta-n">6hrs</div>
-            <div class="track-meta-l">Avg. completion</div>
-          </div>
+          <div class="track-meta-item"><div class="track-meta-n">8</div><div class="track-meta-l">Core modules</div></div>
+          <div class="track-meta-item"><div class="track-meta-n">6hrs</div><div class="track-meta-l">Avg. completion</div></div>
         </div>
         <div class="track-chevron">&#8964;</div>
       </div>
@@ -698,30 +524,9 @@ body {
             <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=75" alt="A day in Education with AI" class="workday-img" />
             <div class="workday-label">A day in Education with AI</div>
             <div class="workday-moments">
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">8:00am</div>
-                  <div class="moment-task">Review overnight AI analysis of last week's assessment scores</div>
-                  <div class="moment-ai">AI surfaces which students need intervention before the day begins</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">11:30am</div>
-                  <div class="moment-task">Upload class essays for AI-assisted feedback generation</div>
-                  <div class="moment-ai">Differentiated comments for 30 students in under 10 minutes</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">3:15pm</div>
-                  <div class="moment-task">Use AI to draft next week's lesson plan and parent communications</div>
-                  <div class="moment-ai">Two hours of prep work done before leaving the building</div>
-                </div>
-              </div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">8:00am</div><div class="moment-task">Review overnight AI analysis of last week's assessment scores</div><div class="moment-ai">AI surfaces which students need intervention before the day begins</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">11:30am</div><div class="moment-task">Upload class essays for AI-assisted feedback generation</div><div class="moment-ai">Differentiated comments for 30 students in under 10 minutes</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">3:15pm</div><div class="moment-task">Use AI to draft next week's lesson plan and parent communications</div><div class="moment-ai">Two hours of prep work done before leaving the building</div></div></div>
             </div>
           </div>
           <div class="outcomes-col">
@@ -736,10 +541,8 @@ body {
             </ul>
             <div class="tools-label">AI tools covered</div>
             <div class="tool-chips">
-              <span class="tool-chip">ChatGPT for educators</span>
-              <span class="tool-chip">Khanmigo</span>
-              <span class="tool-chip">MagicSchool AI</span>
-              <span class="tool-chip">Canva AI</span>
+              <span class="tool-chip">ChatGPT for educators</span><span class="tool-chip">Khanmigo</span>
+              <span class="tool-chip">MagicSchool AI</span><span class="tool-chip">Canva AI</span>
               <span class="tool-chip">Google Gemini</span>
             </div>
           </div>
@@ -759,7 +562,7 @@ body {
                 <div class="who-item">CTE education pathways</div>
               </div>
             </div>
-            <a href="#" class="track-cta">Bring this track to your institution</a>
+            <a href="https://essentials-ai.com/contact-us/" class="track-cta">Bring this track to your institution</a>
           </div>
         </div>
       </div>
@@ -774,14 +577,8 @@ body {
           <div class="track-tagline">For clinical staff, administrative professionals, and healthcare operations teams</div>
         </div>
         <div class="track-meta">
-          <div class="track-meta-item">
-            <div class="track-meta-n">9</div>
-            <div class="track-meta-l">Core modules</div>
-          </div>
-          <div class="track-meta-item">
-            <div class="track-meta-n">7hrs</div>
-            <div class="track-meta-l">Avg. completion</div>
-          </div>
+          <div class="track-meta-item"><div class="track-meta-n">9</div><div class="track-meta-l">Core modules</div></div>
+          <div class="track-meta-item"><div class="track-meta-n">7hrs</div><div class="track-meta-l">Avg. completion</div></div>
         </div>
         <div class="track-chevron">&#8964;</div>
       </div>
@@ -791,30 +588,9 @@ body {
             <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=75" alt="A day in Healthcare with AI" class="workday-img" />
             <div class="workday-label">A day in Healthcare with AI</div>
             <div class="workday-moments">
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">6:45am</div>
-                  <div class="moment-task">Review AI-generated patient risk summaries ahead of morning rounds</div>
-                  <div class="moment-ai">Flags high-risk patients automatically, reducing prep time significantly</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">10:00am</div>
-                  <div class="moment-task">Use AI documentation tools to complete clinical notes in real time</div>
-                  <div class="moment-ai">Note completion time cut from 20 minutes per patient to under 5</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">2:30pm</div>
-                  <div class="moment-task">Run billing codes through AI review before submission</div>
-                  <div class="moment-ai">Catches common coding errors before they become claim denials</div>
-                </div>
-              </div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">6:45am</div><div class="moment-task">Review AI-generated patient risk summaries ahead of morning rounds</div><div class="moment-ai">Flags high-risk patients automatically, reducing prep time significantly</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">10:00am</div><div class="moment-task">Use AI documentation tools to complete clinical notes in real time</div><div class="moment-ai">Note completion time cut from 20 minutes per patient to under 5</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">2:30pm</div><div class="moment-task">Run billing codes through AI review before submission</div><div class="moment-ai">Catches common coding errors before they become claim denials</div></div></div>
             </div>
           </div>
           <div class="outcomes-col">
@@ -829,10 +605,8 @@ body {
             </ul>
             <div class="tools-label">AI tools covered</div>
             <div class="tool-chips">
-              <span class="tool-chip">Nuance DAX</span>
-              <span class="tool-chip">Nabla Copilot</span>
-              <span class="tool-chip">Epic AI tools</span>
-              <span class="tool-chip">Suki AI</span>
+              <span class="tool-chip">Nuance DAX</span><span class="tool-chip">Nabla Copilot</span>
+              <span class="tool-chip">Epic AI tools</span><span class="tool-chip">Suki AI</span>
               <span class="tool-chip">ChatGPT (clinical use)</span>
             </div>
           </div>
@@ -852,7 +626,7 @@ body {
                 <div class="who-item">CTE healthcare pathways</div>
               </div>
             </div>
-            <a href="#" class="track-cta">Bring this track to your institution</a>
+            <a href="https://essentials-ai.com/contact-us/" class="track-cta">Bring this track to your institution</a>
           </div>
         </div>
       </div>
@@ -867,14 +641,8 @@ body {
           <div class="track-tagline">For operations, HR, finance, and administrative professionals</div>
         </div>
         <div class="track-meta">
-          <div class="track-meta-item">
-            <div class="track-meta-n">8</div>
-            <div class="track-meta-l">Core modules</div>
-          </div>
-          <div class="track-meta-item">
-            <div class="track-meta-n">6hrs</div>
-            <div class="track-meta-l">Avg. completion</div>
-          </div>
+          <div class="track-meta-item"><div class="track-meta-n">8</div><div class="track-meta-l">Core modules</div></div>
+          <div class="track-meta-item"><div class="track-meta-n">6hrs</div><div class="track-meta-l">Avg. completion</div></div>
         </div>
         <div class="track-chevron">&#8964;</div>
       </div>
@@ -884,30 +652,9 @@ body {
             <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=75" alt="A day in Business with AI" class="workday-img" />
             <div class="workday-label">A day in Business with AI</div>
             <div class="workday-moments">
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">9:00am</div>
-                  <div class="moment-task">Use AI to generate the monthly operations report from raw data</div>
-                  <div class="moment-ai">What used to take a half day is reviewed and finalized before lunch</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">1:00pm</div>
-                  <div class="moment-task">Draft a vendor proposal using AI writing assistance</div>
-                  <div class="moment-ai">First draft ready in minutes, leaving time to focus on strategy</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">3:30pm</div>
-                  <div class="moment-task">Use AI to screen and summarize job applications for an open role</div>
-                  <div class="moment-ai">Stack-ranked shortlist with key highlights ready for the hiring manager</div>
-                </div>
-              </div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">9:00am</div><div class="moment-task">Use AI to generate the monthly operations report from raw data</div><div class="moment-ai">What used to take a half day is reviewed and finalized before lunch</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">1:00pm</div><div class="moment-task">Draft a vendor proposal using AI writing assistance</div><div class="moment-ai">First draft ready in minutes, leaving time to focus on strategy</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">3:30pm</div><div class="moment-task">Use AI to screen and summarize job applications for an open role</div><div class="moment-ai">Stack-ranked shortlist with key highlights ready for the hiring manager</div></div></div>
             </div>
           </div>
           <div class="outcomes-col">
@@ -922,10 +669,8 @@ body {
             </ul>
             <div class="tools-label">AI tools covered</div>
             <div class="tool-chips">
-              <span class="tool-chip">Microsoft Copilot</span>
-              <span class="tool-chip">ChatGPT</span>
-              <span class="tool-chip">Notion AI</span>
-              <span class="tool-chip">Google Gemini</span>
+              <span class="tool-chip">Microsoft Copilot</span><span class="tool-chip">ChatGPT</span>
+              <span class="tool-chip">Notion AI</span><span class="tool-chip">Google Gemini</span>
               <span class="tool-chip">Zapier AI</span>
             </div>
           </div>
@@ -945,7 +690,7 @@ body {
                 <div class="who-item">WIOA adult learners</div>
               </div>
             </div>
-            <a href="#" class="track-cta">Bring this track to your institution</a>
+            <a href="https://essentials-ai.com/contact-us/" class="track-cta">Bring this track to your institution</a>
           </div>
         </div>
       </div>
@@ -960,14 +705,8 @@ body {
           <div class="track-tagline">For production teams, quality inspectors, and operations managers</div>
         </div>
         <div class="track-meta">
-          <div class="track-meta-item">
-            <div class="track-meta-n">8</div>
-            <div class="track-meta-l">Core modules</div>
-          </div>
-          <div class="track-meta-item">
-            <div class="track-meta-n">7hrs</div>
-            <div class="track-meta-l">Avg. completion</div>
-          </div>
+          <div class="track-meta-item"><div class="track-meta-n">8</div><div class="track-meta-l">Core modules</div></div>
+          <div class="track-meta-item"><div class="track-meta-n">7hrs</div><div class="track-meta-l">Avg. completion</div></div>
         </div>
         <div class="track-chevron">&#8964;</div>
       </div>
@@ -977,30 +716,9 @@ body {
             <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75" alt="A day in Manufacturing with AI" class="workday-img" />
             <div class="workday-label">A day in Manufacturing with AI</div>
             <div class="workday-moments">
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">7:00am</div>
-                  <div class="moment-task">Review AI-generated overnight equipment health report</div>
-                  <div class="moment-ai">Predictive alerts identify two machines showing early wear patterns</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">10:30am</div>
-                  <div class="moment-task">Use AI quality control dashboard to review defect pattern data</div>
-                  <div class="moment-ai">Root cause identified in minutes rather than waiting for end-of-shift reports</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">2:00pm</div>
-                  <div class="moment-task">Run inventory levels through AI demand forecasting tool</div>
-                  <div class="moment-ai">Restocking orders adjusted before supply chain gaps emerge</div>
-                </div>
-              </div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">7:00am</div><div class="moment-task">Review AI-generated overnight equipment health report</div><div class="moment-ai">Predictive alerts identify two machines showing early wear patterns</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">10:30am</div><div class="moment-task">Use AI quality control dashboard to review defect pattern data</div><div class="moment-ai">Root cause identified in minutes rather than waiting for end-of-shift reports</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">2:00pm</div><div class="moment-task">Run inventory levels through AI demand forecasting tool</div><div class="moment-ai">Restocking orders adjusted before supply chain gaps emerge</div></div></div>
             </div>
           </div>
           <div class="outcomes-col">
@@ -1015,10 +733,8 @@ body {
             </ul>
             <div class="tools-label">AI tools covered</div>
             <div class="tool-chips">
-              <span class="tool-chip">Augury</span>
-              <span class="tool-chip">Sight Machine</span>
-              <span class="tool-chip">IBM Maximo</span>
-              <span class="tool-chip">Microsoft Copilot</span>
+              <span class="tool-chip">Augury</span><span class="tool-chip">Sight Machine</span>
+              <span class="tool-chip">IBM Maximo</span><span class="tool-chip">Microsoft Copilot</span>
               <span class="tool-chip">ChatGPT</span>
             </div>
           </div>
@@ -1038,7 +754,7 @@ body {
                 <div class="who-item">WIOA reskilling participants</div>
               </div>
             </div>
-            <a href="#" class="track-cta">Bring this track to your institution</a>
+            <a href="https://essentials-ai.com/contact-us/" class="track-cta">Bring this track to your institution</a>
           </div>
         </div>
       </div>
@@ -1053,14 +769,8 @@ body {
           <div class="track-tagline">For IT staff, systems administrators, and technical support teams</div>
         </div>
         <div class="track-meta">
-          <div class="track-meta-item">
-            <div class="track-meta-n">9</div>
-            <div class="track-meta-l">Core modules</div>
-          </div>
-          <div class="track-meta-item">
-            <div class="track-meta-n">8hrs</div>
-            <div class="track-meta-l">Avg. completion</div>
-          </div>
+          <div class="track-meta-item"><div class="track-meta-n">9</div><div class="track-meta-l">Core modules</div></div>
+          <div class="track-meta-item"><div class="track-meta-n">8hrs</div><div class="track-meta-l">Avg. completion</div></div>
         </div>
         <div class="track-chevron">&#8964;</div>
       </div>
@@ -1070,30 +780,9 @@ body {
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=75" alt="A day in Technology with AI" class="workday-img" />
             <div class="workday-label">A day in Technology with AI</div>
             <div class="workday-moments">
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">8:30am</div>
-                  <div class="moment-task">Review AI-prioritized help desk ticket queue for the morning</div>
-                  <div class="moment-ai">Critical issues surfaced automatically, reducing triage time by half</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">11:00am</div>
-                  <div class="moment-task">Use AI code assistant to debug a script causing system errors</div>
-                  <div class="moment-ai">Root cause identified and fix suggested in seconds, not hours</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">4:00pm</div>
-                  <div class="moment-task">Run AI security scan on recent network activity logs</div>
-                  <div class="moment-ai">Anomaly flagged that manual review would have missed until morning</div>
-                </div>
-              </div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">8:30am</div><div class="moment-task">Review AI-prioritized help desk ticket queue for the morning</div><div class="moment-ai">Critical issues surfaced automatically, reducing triage time by half</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">11:00am</div><div class="moment-task">Use AI code assistant to debug a script causing system errors</div><div class="moment-ai">Root cause identified and fix suggested in seconds, not hours</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">4:00pm</div><div class="moment-task">Run AI security scan on recent network activity logs</div><div class="moment-ai">Anomaly flagged that manual review would have missed until morning</div></div></div>
             </div>
           </div>
           <div class="outcomes-col">
@@ -1108,10 +797,8 @@ body {
             </ul>
             <div class="tools-label">AI tools covered</div>
             <div class="tool-chips">
-              <span class="tool-chip">GitHub Copilot</span>
-              <span class="tool-chip">Microsoft Copilot</span>
-              <span class="tool-chip">Freshdesk AI</span>
-              <span class="tool-chip">Darktrace</span>
+              <span class="tool-chip">GitHub Copilot</span><span class="tool-chip">Microsoft Copilot</span>
+              <span class="tool-chip">Freshdesk AI</span><span class="tool-chip">Darktrace</span>
               <span class="tool-chip">ChatGPT</span>
             </div>
           </div>
@@ -1131,7 +818,7 @@ body {
                 <div class="who-item">Community college IT programs</div>
               </div>
             </div>
-            <a href="#" class="track-cta">Bring this track to your institution</a>
+            <a href="https://essentials-ai.com/contact-us/" class="track-cta">Bring this track to your institution</a>
           </div>
         </div>
       </div>
@@ -1146,14 +833,8 @@ body {
           <div class="track-tagline">For attorneys, paralegals, and legal support professionals</div>
         </div>
         <div class="track-meta">
-          <div class="track-meta-item">
-            <div class="track-meta-n">7</div>
-            <div class="track-meta-l">Core modules</div>
-          </div>
-          <div class="track-meta-item">
-            <div class="track-meta-n">6hrs</div>
-            <div class="track-meta-l">Avg. completion</div>
-          </div>
+          <div class="track-meta-item"><div class="track-meta-n">7</div><div class="track-meta-l">Core modules</div></div>
+          <div class="track-meta-item"><div class="track-meta-n">6hrs</div><div class="track-meta-l">Avg. completion</div></div>
         </div>
         <div class="track-chevron">&#8964;</div>
       </div>
@@ -1163,30 +844,9 @@ body {
             <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=75" alt="A day in Law with AI" class="workday-img" />
             <div class="workday-label">A day in Law with AI</div>
             <div class="workday-moments">
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">9:00am</div>
-                  <div class="moment-task">Run a new contract through AI review before client meeting</div>
-                  <div class="moment-ai">Key risk clauses flagged and summarized before the attorney finishes their coffee</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">12:00pm</div>
-                  <div class="moment-task">Use AI to research case law relevant to an ongoing matter</div>
-                  <div class="moment-ai">Relevant precedents surfaced in minutes across thousands of documents</div>
-                </div>
-              </div>
-              <div class="moment">
-                <div class="moment-dot"></div>
-                <div>
-                  <div class="moment-time">3:00pm</div>
-                  <div class="moment-task">Draft initial motion using AI writing assistance from case notes</div>
-                  <div class="moment-ai">First draft ready for attorney review in a fraction of the usual time</div>
-                </div>
-              </div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">9:00am</div><div class="moment-task">Run a new contract through AI review before client meeting</div><div class="moment-ai">Key risk clauses flagged and summarized before the attorney finishes their coffee</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">12:00pm</div><div class="moment-task">Use AI to research case law relevant to an ongoing matter</div><div class="moment-ai">Relevant precedents surfaced in minutes across thousands of documents</div></div></div>
+              <div class="moment"><div class="moment-dot"></div><div><div class="moment-time">3:00pm</div><div class="moment-task">Draft initial motion using AI writing assistance from case notes</div><div class="moment-ai">First draft ready for attorney review in a fraction of the usual time</div></div></div>
             </div>
           </div>
           <div class="outcomes-col">
@@ -1201,10 +861,8 @@ body {
             </ul>
             <div class="tools-label">AI tools covered</div>
             <div class="tool-chips">
-              <span class="tool-chip">Harvey AI</span>
-              <span class="tool-chip">Casetext CoCounsel</span>
-              <span class="tool-chip">Westlaw AI</span>
-              <span class="tool-chip">ChatGPT</span>
+              <span class="tool-chip">Harvey AI</span><span class="tool-chip">Casetext CoCounsel</span>
+              <span class="tool-chip">Westlaw AI</span><span class="tool-chip">ChatGPT</span>
               <span class="tool-chip">Contract Express</span>
             </div>
           </div>
@@ -1224,7 +882,7 @@ body {
                 <div class="who-item">Public defender offices</div>
               </div>
             </div>
-            <a href="#" class="track-cta">Bring this track to your institution</a>
+            <a href="https://essentials-ai.com/contact-us/" class="track-cta">Bring this track to your institution</a>
           </div>
         </div>
       </div>
@@ -1265,6 +923,19 @@ body {
           <div class="assessment-step-desc">Learners are re-assessed and their skills gain is documented. Your institution receives a cohort-level report showing before and after results for every participant.</div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta-section">
+  <div class="bottom-cta-inner">
+    <div class="bottom-cta-eyebrow">Ready to get started?</div>
+    <h2 class="bottom-cta-title">Bring a track to your <em>institution</em></h2>
+    <p class="bottom-cta-sub">Connect with our team to discuss which tracks fit your programs, or see what AI Essentials has already helped other institutions accomplish.</p>
+    <div class="bottom-cta-buttons">
+      <a href="https://essentials-ai.com/contact-us/" class="btn-primary">Learn More</a>
+      <a href="https://essentials-ai.com/success-stories/" class="btn-outline">Success Stories</a>
     </div>
   </div>
 </div>
