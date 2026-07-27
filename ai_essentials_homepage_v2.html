@@ -677,26 +677,100 @@ body {
 /* RESPONSIVE */
 @media (max-width: 960px) {
   .hero-bottom { grid-template-columns: 1fr; gap: 40px; }
-  .hero h1 { white-space: normal; font-size: clamp(28px, 6vw, 40px) !important; }
+  .hero h1 { white-space: normal; font-size: clamp(30px, 7vw, 42px) !important; }
   .hero-image-col { display: none; }
   .hero-bottom-left { padding-bottom: 40px; }
   .stats-row-inner { grid-template-columns: 1fr; border-left: none; }
-  .stat-block { border-right: none; border-bottom: 1px solid var(--border); }
+  .stat-block { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 24px; }
+  .stat-block:last-child { border-bottom: none; }
   .fit-grid { grid-template-columns: repeat(2, 1fr); }
-  .continuum-header { grid-template-columns: 1fr; gap: 28px; }
-  .continuum-track { flex-wrap: wrap; justify-content: center; }
+  .continuum-header { grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px; }
+  .continuum-track { flex-wrap: wrap; justify-content: center; row-gap: 36px; }
   .continuum-track::before { display: none; }
+  .flow-stage { flex: 0 0 33.333%; }
   .flow-arrow { display: none; }
-  .trust-bar-inner { flex-wrap: wrap; }
+  .trust-bar-inner { flex-wrap: wrap; height: auto; row-gap: 12px; }
   .hero, .diff-section, .fit-section, .continuum-section, .cta-section { padding-left: 24px; padding-right: 24px; }
   .trust-bar, .stats-row { padding-left: 24px; padding-right: 24px; }
   .hero { padding-top: 60px; }
+  .diff-section, .fit-section, .continuum-section, .cta-section { padding-top: 72px; padding-bottom: 72px; }
 }
+
 @media (max-width: 600px) {
-  .fit-grid { grid-template-columns: 1fr; }
+  /* Layout + spacing */
+  .hero { padding-top: 44px; padding-left: 20px; padding-right: 20px; }
+  .hero-top { padding-bottom: 28px; margin-bottom: 36px; }
+  .diff-section, .fit-section, .continuum-section, .cta-section { padding: 60px 20px; }
+  .trust-bar, .stats-row { padding-left: 20px; padding-right: 20px; }
+
+  /* Hero typography */
+  .hero h1 { font-size: clamp(28px, 8.5vw, 34px) !important; line-height: 1.15 !important; }
+  .hero-sub { font-size: 17px !important; margin-bottom: 24px; }
+
+  /* Urgency pill: soften the capsule so wrapped text looks intentional */
+  .hero-urgency {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    margin-bottom: 24px;
+  }
+  .hero-urgency-n { font-size: 22px !important; margin-top: 2px; }
+  .hero-urgency-text { font-size: 14px !important; }
+
+  /* Scenario lines: scale down the big italic serif */
+  .scenario-lines { gap: 14px; margin-bottom: 28px; }
+  .sl-icon { font-size: 20px !important; width: 28px; line-height: 1.5; }
+  .sl-text { font-size: 18px !important; line-height: 1.5 !important; }
+
+  /* CTAs: full-width tap targets */
   .hero-ctas { flex-direction: column; }
-  .cta-buttons { flex-direction: column; align-items: center; }
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-secondary { width: 100%; text-align: center; }
+
+  /* Trust bar: label on its own row, carousel full width */
+  .trust-bar { padding-top: 20px; padding-bottom: 20px; }
+  .trust-bar-divider { display: none; }
+  .trust-bar-label { width: 100%; }
+  .carousel-track-wrap { flex: 0 0 100%; height: 44px; }
+  .carousel-track { gap: 40px; }
+  .carousel-logo { height: 30px !important; max-width: 140px !important; max-height: 30px !important; }
+
+  /* Stats */
+  .stat-n { font-size: 42px !important; }
+
+  /* Dark differentiator section */
+  .diff-title { margin-bottom: 36px; }
+  .diff-scenario { gap: 14px; padding: 18px 18px; align-items: flex-start; }
+  .diff-scenario-icon { font-size: 20px !important; width: 28px; }
+  .diff-scenario-text { font-size: 16px !important; }
   .diff-scenario-track { display: none; }
+
+  /* Fit cards */
+  .fit-grid { grid-template-columns: 1fr; }
+  .fit-card { padding: 26px 22px; }
+  .fit-header { margin-bottom: 36px; }
+  .section-title { font-size: clamp(27px, 8vw, 34px) !important; }
+  .diff-title { font-size: clamp(26px, 7.5vw, 32px) !important; }
+
+  /* Continuum: single centered column */
+  .continuum-track { flex-direction: column; align-items: center; row-gap: 32px; }
+  .flow-stage { flex: 0 0 auto; width: 100%; }
+  .flow-dot { width: 84px; height: 84px; margin-bottom: 14px; }
+  .flow-def { max-width: 240px; }
+  .continuum-header-right { font-size: 16px !important; }
+
+  /* Final CTA */
+  .cta-sub { margin-bottom: 32px !important; }
+  .cta-buttons { flex-direction: column; align-items: stretch; }
+  .btn-white, .btn-outline-white { text-align: center; width: 100%; }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .hero h1 { font-size: 26px !important; }
+  .sl-text { font-size: 16px !important; }
 }
 </style>
 </head>
