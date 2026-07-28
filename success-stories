@@ -239,6 +239,14 @@
   <p class="headline">NACEE equips students across Northern Alabama with ethical, hands-on AI skills that build confidence, strengthen college readiness, and open doors to future careers.</p>
   <span class="more">Read the story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
 </a>
+
+<a class="card reveal" href="https://essentials-ai.com/njit-ts/">
+  <div class="card-logo"><img src="https://essentials-ai.com/wp-content/uploads/2026/07/njit.webp" alt="New Jersey Institute of Technology"></div>
+  <h3>New Jersey Institute of Technology</h3>
+  <p class="headline">NJIT's TRIO Talent Search students turn AI experience into judgment, building the responsible, practical AI skills that strengthen studying, scholarships, and future careers.</p>
+  <span class="more">Read the story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</a>
+
     </div>
     
   </section>
@@ -350,12 +358,6 @@
         <div class="coming-card reveal">
           <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/07/harris-stowe.png" alt="Harris-Stowe State University"></div>
           <h3>Harris-Stowe State University</h3>
-          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
-        </div>
-
-        <div class="coming-card reveal">
-          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/07/njit.webp" alt="New Jersey Institute of Technology"></div>
-          <h3>New Jersey Institute of Technology</h3>
           <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
         </div>
 
