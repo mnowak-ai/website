@@ -358,7 +358,7 @@
         </div>
 
         <div class="coming-card reveal">
-          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/07/sinclair.jpeg" alt="Sinclair Community College"></div>
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/sinclair.png" alt="Sinclair Community College"></div>
           <h3>Sinclair Community College</h3>
           <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
         </div>
@@ -384,6 +384,66 @@
         <div class="coming-card reveal">
           <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/07/savannah_state_logo-400.webp" alt="Savannah State University"></div>
           <h3>Savannah State University</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/csulb.png" alt="California State University, Long Beach"></div>
+          <h3>California State University, Long Beach</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/wnmu-logo-horz-color-no-bg.png" alt="Western New Mexico University"></div>
+          <h3>Western New Mexico University</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/logo_2x-min-300x77-1.webp" alt="Chesapeake College"></div>
+          <h3>Chesapeake College</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/escc-logo.png" alt="Enterprise State Community College"></div>
+          <h3>Enterprise State Community College</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/IVC-logo.png" alt="Imperial Community College District"></div>
+          <h3>Imperial Community College District</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/jcc.png" alt="Joliet Junior College"></div>
+          <h3>Joliet Junior College</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/PClawsBig64.webp" alt="Pomperaug High School"></div>
+          <h3>Pomperaug High School</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/unr-scaled.webp" alt="University of Nevada, Reno"></div>
+          <h3>University of Nevada, Reno</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/verbumdei.jpg" alt="Verbum Dei Jesuit High School"></div>
+          <h3>Verbum Dei Jesuit High School</h3>
+          <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
+        </div>
+
+        <div class="coming-card reveal">
+          <div class="logo-hold"><img src="https://essentials-ai.com/wp-content/uploads/2026/10/WSU-lockup-vert-rgb-12in-scaled-1.jpg" alt="Washington State University, Spokane"></div>
+          <h3>Washington State University, Spokane</h3>
           <span class="coming-badge"><span class="coming-pulse"></span>Story coming soon</span>
         </div>
 
